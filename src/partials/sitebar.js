@@ -6,7 +6,7 @@ insertingCategories.addEventListener("wheel", function(event) {
   var delta = event.deltaY || event.detail || event.wheelDelta;
   insertingCategories.scrollTop += delta;
 });
-fetchCategories()
+fetchCategories() 
 async function fetchCategories(){
     const apiCategories="https://books-backend.p.goit.global/books/category-list"
     await axios.get(apiCategories)
