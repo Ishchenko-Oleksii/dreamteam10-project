@@ -49,9 +49,6 @@ async function fetchBooks() {
       bookImage.src = book.book_image;
       bookImage.alt = book.title;
       bookImage.loading = 'lazy';
-      bookImage.classList.add("js-gallery-image");//добавила строку
-     
-      bookImage.classList.add(`data-id="${book._id}"`);//добавила строку
       bookImageContainer.appendChild(bookImage);
   
       const quickView = document.createElement('div');
