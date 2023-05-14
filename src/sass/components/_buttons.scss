@@ -46,6 +46,65 @@
   color: $darktheme-border-black;
 }
 
+.button_circle-black {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+
+  width: 44px;
+  height: 44px;
+  background-color: $darktheme-border-black;
+  border: 1px solid $darktheme-border-black;
+  border-radius: 50%;
+  color: $light-background;
+}
+
+.button_circle-yellow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+
+  width: 44px;
+  height: 44px;
+  background-color: $hover-yellow;
+  border: 1px solid $darktheme-border-black;
+  border-radius: 50%;
+  color: black;
+}
+
+.button_user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+
+  width: 184px;
+  height: 45px;
+  background-color: $button-background;
+  border: 1px solid $button-background;
+  border-radius: 36px;
+  color: $light-background;
+}
+
 .button_signup {
   display: flex;
   align-items: center;
@@ -65,4 +124,43 @@
   border: 1.5px solid $darktheme-border-black;
   border-radius: 18px;
   color: $light-background;
+}
+
+.button_logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+
+  width: 184px;
+  height: 48px;
+  background-color: $light-background;
+  border: 1.5px solid $darktheme-border-black;
+  border-radius: 18px;
+  color: $darktheme-border-black;
+}
+
+.button_trash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 34px;
+  height: 34px;
+  background-color: $button-background;
+  border: 1px solid $button-background;
+  border-radius: 50%;
+  color: $light-background;
+}
+
+.icon_trash {
+  fill: none;
+  stroke: $light-background;
 }
