@@ -1,0 +1,53 @@
+<section class="container">
+
+    <div>
+        <input type="button" value="Log out" class="submit-out js-signout">
+    </div>
+
+    <article class="forms">
+
+        <div class="content">
+
+            <div class="signup-cont cont">
+                <form action="submit" method="post" enctype="multipart/form-data" class="js-form-signup">
+                    <input type="name" name="name" id="name" class="inpt" required="required" placeholder="NAME">
+                    <label for="name">name</label>
+                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="email">
+                    <label for="email">email</label>
+                    <input type="password" name="password" id="password" class="inpt" required="required"
+                        placeholder="password">
+                    <label for="password">password</label>
+                    <div class="submit-wrap">
+                        <input type="submit" value="Sign up" class="submit">
+                    </div>
+                </form>
+            </div>
+
+            <div class="signin-cont cont hidden">
+                <form action="submit" method="post" enctype="multipart/form-data" class="js-form-signin">
+                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="email">
+                    <label for="email">email</label>
+                    <input type="password" name="password" id="password" class="inpt" required="required"
+                        placeholder="password">
+                    <label for="password">password</label>
+                    <div class="submit-wrap">
+                        <input type="submit" value="Sign in" class="submit">
+                    </div>
+                </form>
+            </div>
+
+            <div class="tabs">
+                <div class="tab signup js-tab active">
+                    <!-- <a href="#signup"> -->
+                    Sign up
+                    <!-- </a> -->
+                </div>
+                <div class="tab signin js-tab">
+                    <!-- <a href="#signin"> -->
+                    Sign in
+                    <!-- </a> -->
+                </div>
+            </div>
+
+    </article>
+</section>
