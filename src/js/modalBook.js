@@ -1,16 +1,19 @@
 import AP from './fetchById';
 
 import imageAmazon from '../images/amazon.jpg';
-import imageBookShop from '../images/bookshop.jpg';
-import imageImage from '../images/openbook.jpg';
+// import imageBookShop from '../images/bookshop.jpg';
+// import imageImage from '../images/openbook.jpg';
 
 const refs={
+    ul: document.querySelector('.book__list'),
     closeModalBtn: document.querySelector('[data-action="close-modal"]'),
     backdrop: document.querySelector('.js-backdrop'),
     bookCard: document.querySelector('.js-book-card'),
     shoppingListBtn: document.querySelector('[data-action="shopping-list-modal"]'),
     text: document.querySelector('.js-modal-text'),
 }
+
+console.log('refs.ul', refs.ul);
 
 const STORAGE_KEY = 'bookId';
 let idBook=0;
@@ -24,11 +27,13 @@ console.log('arrShoppingList= ', arrShoppingList);
 // console.log(refs.closeModalBtn);
 // console.log(refs.backdrop);
 
+refs.ul.addEventListener('click',onItemGalleryBooksClick);
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs.shoppingListBtn.addEventListener('click', onShoppingListBtnClick);
 
 function onItemGalleryBooksClick(event){
+    console.log(onItemGalleryBooksClick)
     event.preventDefault();
 
     const isImageGalleryEl=event.target.classList.contains('js-gallery-image');
@@ -105,18 +110,20 @@ function createMarkupBookModal(arrayInfoBook){
     <p class="book-author">${author}</p>
     <p class="book-description">${description}</p>
     <div class="book-links">
-    <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener">
-    <img src="${imageAmazon}" width="62px" height="19px"/>
-    </a>
-    <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener">
-    <img src="${imageImage}" width="33px" height="32px"/>
-    </a>
-    <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener">
-    <img src="${imageBookShop}" width="38px" height="36px"/>
-    </a>
+    
     </div>
     </div>`;
 
+
+    // <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener">
+    // <img src="${imageAmazon}" width="62px" height="19px"/>
+    // </a>
+    // <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener">
+    // <img src="${imageImage}" width="33px" height="32px"/>
+    // </a>
+    // <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener">
+    // <img src="${imageBookShop}" width="38px" height="36px"/>
+    // </a>
 
     //console.log(markup);
     refs.bookCard.innerHTML=markup;
