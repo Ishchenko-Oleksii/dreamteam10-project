@@ -1,35 +1,200 @@
 .bookShell {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  padding-right: 20px;
+  padding-left: 20px;
+
+@media (min-width: 377px) {
+  padding-right: 32px;
+  padding-left: 32px;
+      }
+      @media (min-width: 770px) {
+        padding-left: 220px;
+        padding-right: 24px;
+        
+            }
+
+  &__title{
+    color: $darktheme-border-black;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.04em;
     margin-top: 40px;
-    margin-bottom: 80px;
-    padding-right: 20px;
-    padding-left: 20px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+
+    @media (min-width: 377px) {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.08;
+      margin-top: 100px;
+      margin-left: 32px;
+      }
+      @media (min-width: 770px) {
+        margin-left: 220px;
+            }
+  }
+  &__title_span {
+    color: $button-background;
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+    @media (min-width: 377px) {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.08;
+      }
+  }
+  }
+
+  .book{
+    margin-bottom: 86px;
+    position: relative;
+
+@media (min-width: 770px) {
+        
+        max-width: 996px;
+            }
+    &__button {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.28;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      position: absolute;
+      right: 0;
+      
+    }
+
+  &__list {
+    @media (min-width: 377px) {
+    display: flex;
+    gap: 25px;
+    }
+  }
+  &__item{
+    @media (min-width: 377px) {
+      width: 218px;
+      height: auto;
+      }
+    
+  }
+    &__category {
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 1.28;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      padding-bottom: 18px;
+
+      @media (min-width: 377px) {
+        line-height: 1.71;
+        }
+    }
+    &__img {
+      cursor: pointer;
+      max-width: 100%;
+      width: 335px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+
+      @media (min-width: 377px) {
+        max-width: 100%;
+        width: 218px;
+        height: 316px;
+        object-fit:cover;
+      }
+
+      @media (min-width: 770px) {
+        max-width: 100%;
+        width: 180px;
+        height: 256px;
+        object-fit:cover;
+      }
+    }
+    &__title {
+      cursor: pointer;
+      font-family: 'DM Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;      
+      color: $darktheme-border-black;
+      padding-bottom: 4px;
+      padding-top: 14px;
+    }
+    &__author {
+      cursor: default;
+      font-family: 'DM Sans';
+      font-style: italic;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 1.16;
+      letter-spacing: -0.04em;
+      padding-bottom: 8px;
+      @media (min-width: 377px) {
+        padding-bottom: 20px;
+        }
+        @media (min-width: 770px) {
+          padding-bottom: 32px;
+          }
     }
     
-    .book-image-container {
-        position: relative;
-        display: inline-block;
+  }
+    
+.book-image-container {
+      position: relative;
+      display: inline-block;
+      height: auto;
+      overflow: hidden;
+      
       }
       
       .quick-view {
+        cursor: pointer;
         display: none;
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 70px;
+        height: calc(100% / 4.5);
         padding: 5px;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 0px 0px 8px 8px;
         text-align: center;
         box-sizing: border-box;
-        font-size: 16px;
-        font-weight: bold;
-        line-height: 1.5;
+        background-color: $hover-yellow;
+        font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
       }
-      
       
       .book-image-container:hover .quick-view {
-        display: block;
+        opacity: 1;
       }
+      
+      
     
     

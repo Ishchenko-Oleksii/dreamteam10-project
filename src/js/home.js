@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 async function fetchBooks() {
-    console.log('fetchBooks() was called');
     const url = `https://books-backend.p.goit.global/books/top-books`;
     try {
       const response = await axios.get(url);
@@ -13,6 +12,13 @@ async function fetchBooks() {
         if (card) {
           bookShell.appendChild(card);
         }
+        if (data.length === 0) {
+          const bookShell = document.querySelector('.bookShell');
+          const noBooksMsg = document.createElement('div');
+          noBooksMsg.textContent = 'No books found';
+          noBooksMsg.style.textAlign = 'center';
+          bookShell.appendChild(noBooksMsg);
+        }
       });
       return data; 
     } catch (error) {
@@ -22,22 +28,24 @@ async function fetchBooks() {
   }
   
   function createBookCard(category) {
-    console.log('createBookCard() was called with:', category);
-  
     const { list_name, books } = category;
     const card = document.createElement('div');
+    card.className = "book";
     card.classList.add('card');
   
     const body = document.createElement('div');
-    body.className = 'card-body';
+    body.className = 'book__body';
   
     const title = document.createElement('h2');
     title.textContent = list_name;
+    title.className = "book__category";
     body.appendChild(title);
   
     const list = document.createElement('ul');
+    list.className = "book__list";
     books.slice(0, 5).forEach(book => {
       const bookItem = document.createElement('li');
+      bookItem.className = "book__item";
       bookItem.addEventListener('click', () => {
         console.log(`Book ${book.title} clicked`);
       });
@@ -49,6 +57,9 @@ async function fetchBooks() {
       bookImage.src = book.book_image;
       bookImage.alt = book.title;
       bookImage.loading = 'lazy';
+      bookImage.className = "book__img";
+      bookImage.classList.add("js-gallery-image");
+      bookImage.setAttribute("data-id", book._id);
       bookImageContainer.appendChild(bookImage);
   
       const quickView = document.createElement('div');
@@ -60,10 +71,17 @@ async function fetchBooks() {
   
       const bookTitle = document.createElement('p');
       bookTitle.textContent = book.title;
+      bookTitle.className = "book__title";
+      if (book.title.length > 17) {
+        bookTitle.textContent = book.title.substring(0, 17) + '...';
+      } else {
+        bookTitle.textContent = book.title;
+      }  
       bookItem.appendChild(bookTitle);
   
       const bookAuthor = document.createElement('p');
       bookAuthor.textContent = `${book.author}`;
+      bookAuthor.className = "book__author";
       bookItem.appendChild(bookAuthor);
   
       list.appendChild(bookItem);
@@ -77,16 +95,15 @@ async function fetchBooks() {
     button.addEventListener('click', () => {
       console.log('See more button clicked');
     });
+    button.className = "book__button";
     card.appendChild(button);
-  
-    console.log(card);
-    console.log('createBookCard() created card:', card);
+
     return card;
   }
   function updateBooksPerCategory() {
     const width = window.innerWidth;
-    const booksPerCategory = width < 375 ? 1 : width < 768 ? 3 : 5;
-    const categories = document.querySelectorAll('.card-body ul');
+    const booksPerCategory = width < 376 ? 1 : width < 769 ? 3 : 5;
+    const categories = document.querySelectorAll('.book__body ul');
     categories.forEach(category => {
       const books = category.querySelectorAll('li');
       for (let i = 0; i < books.length; i++) {
@@ -104,7 +121,6 @@ async function fetchBooks() {
   
   
   document.addEventListener('DOMContentLoaded', async () => {
-    console.log('DOMContentLoaded event fired');
     const bookShell = document.createElement('div');
     bookShell.classList.add('bookShell');
     document.body.appendChild(bookShell);
