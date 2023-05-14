@@ -1,3 +1,7 @@
 @import './common';
-@import './example';
-@import './log-in';
+
+@import './layout/header';
+@import './layout/sitebar';
+
+@import './layout/home';
+@import './layout/supports-ukraine'
