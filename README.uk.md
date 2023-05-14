@@ -100,6 +100,9 @@ Pages, в ветку `gh-pages`, каждый раз когда обновляе
 
 ## Команди для  Firebase
 
-npm init -y  
-npm install firebase npm install -g firebase-tools (sudo npm install -g
-firebase-tools для mac) firebase login firebase init firebase deploy
+1. npm init -y
+2. npm install firebase
+
+<!-- firebase login
+firebase init
+firebase deploy -->
