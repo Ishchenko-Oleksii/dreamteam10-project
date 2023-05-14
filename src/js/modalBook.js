@@ -1,8 +1,8 @@
 import AP from './fetchById';
 
-import imageAmazon from '../images/amazon.jpg';
-// import imageBookShop from '../images/bookshop.jpg';
-// import imageImage from '../images/openbook.jpg';
+//import imageAmazon from '../images/amazon.svg';
+// import imageBookShop from '../images/bookshop.svg';
+// import imageImage from '../images/ibooks.svg';
 
 const refs={
     ul: document.querySelector('.book__list'),
