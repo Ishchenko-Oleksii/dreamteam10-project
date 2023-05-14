@@ -1,0 +1,68 @@
+.button {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+
+  width: 499px;
+  height: 64px;
+  background-color: $light-background;
+  border: 2px solid $button-background;
+  border-radius: 40px;
+  padding: 20px;
+  color: $darktheme-border-black;
+
+  &:hover,
+  &:focus {
+    background-color: $button-background;
+    color: $light-background;
+  }
+}
+
+.button_scroll {
+  width: 64px;
+  height: 64px;
+  background-color: $button-background;
+  border: 5px solid #c2b8f0;
+  border-radius: 50%;
+  color: $light-background;
+}
+
+.button_circle {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.22;
+
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid $darktheme-border-black;
+  border-radius: 50%;
+  color: $darktheme-border-black;
+}
+
+.button_signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+
+  width: 184px;
+  height: 48px;
+  background-color: $button-background;
+  border: 1.5px solid $darktheme-border-black;
+  border-radius: 18px;
+  color: $light-background;
+}
