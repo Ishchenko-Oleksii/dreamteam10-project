@@ -134,3 +134,83 @@ header {
     height: 72px;
   }
 }
+
+.navigation{
+  &-list{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-item{
+    padding: 8px 16px;
+    border-radius: 36px;
+    text-align: center;
+    color: $darktheme-border-black;
+  
+    &:hover, &:focus{
+      background-color: $hover-yellow;
+      color: $darktheme-border-black;
+    }
+  }
+  &-link{
+    font-family: $main-font;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.29;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  
+    color: inherit;
+  }
+}
+
+.navigation-burger{
+  margin-top: 183px;
+  &-list{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+  &-item{
+    color:$light-background;
+  }
+}
+
+.btn-logout-burger{
+  position: absolute;
+  left: 20px;
+  bottom: 80px;
+}
+
+.btn-user-burger{
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background-color: transparent;
+  border: 0px;
+}
+
+.burger-menu-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #d11212;
+}
+
+.menu-icon{
+  fill: $darktheme-border-black;
+}
+
+.burger-conteiner{
+  position: fixed;
+  z-index: 1;
+  top: 64px;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, 
+  $button-background 18.03%, 
+  $light-background 100%);
+}
