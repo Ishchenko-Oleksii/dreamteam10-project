@@ -12,6 +12,8 @@ async function fetchCategories() {
       'afterbegin',
       `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button">All categories</button></li>`
     );
+    const helpAside=document.getElementById('1')
+    helpAside.classList.add('selected-category')
     for (let i = 0; i < response.data.length; i++) {
       buttonId += 1;
       insertingCategories.insertAdjacentHTML(

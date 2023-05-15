@@ -4,7 +4,6 @@
   left: 0;
   width: 404px;
   height: 100%;
-  background-color: $light-background;
   padding: 20px;
   box-sizing: border-box;
   z-index: -1;
@@ -15,6 +14,12 @@
 }
 .selected-category{
   color: aqua;
+}
+.aside-list-button:hover{
+  color: #4F2EE8;
+}
+.selected-category{
+  color: #4F2EE8;
 }
 .aside-list {
   width: 356px;
