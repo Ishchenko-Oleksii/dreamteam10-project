@@ -222,5 +222,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateBooksPerCategory();
 });
-
+ 
 
