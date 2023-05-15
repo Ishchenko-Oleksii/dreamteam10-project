@@ -16,13 +16,13 @@ a{
   margin: 0;
 }
 
-body.show-modal .backdrop {
+body.js-show-modal .backdrop {
     opacity: 1;
     visibility: visible;
     pointer-events: initial;
   }
   
-  body.show-modal .modal {
+  body.js-show-modal .modal {
     transform: scale(1);
   }
   
@@ -81,6 +81,12 @@ body.show-modal .backdrop {
     position: absolute;
     top: 12px;
     right: 12px;
+    
+    @media screen and (min-width: 768px) {
+      top: 24px;
+      right: 24px;
+      
+    }
 
     padding: 0;
     cursor: pointer;
@@ -97,6 +103,14 @@ body.show-modal .backdrop {
 }
 
 .modal__button-close-icon{
+    width: 12px;
+    height: 12px; 
+
+    @media screen and (min-width: 768px) {
+      width: 14px;
+      height: 14px;  
+    }
+
     fill: currentColor;
 }
 
@@ -104,7 +118,30 @@ body.show-modal .backdrop {
   margin-bottom: 40px;
 }
 
-.img-thumb{
+// .img-thumb{
+//   width: 287px;
+//   height: 408px;
+
+//   border: 1px solid #4F2EE8;
+  
+//   margin-bottom: 14px;
+
+
+//   @media screen and (min-width: 768px) {
+//     width: 192px;
+//     height: 281px;
+//     margin-bottom: 0;
+//   }
+
+// }
+.book-image{
+  border-radius: 8px;
+  border: 1px solid #111111;
+
+  // height: 100%;
+  // width: 100%;
+  object-fit: cover;
+  max-width: 100%;
   width: 287px;
   height: 408px;
 
@@ -118,16 +155,6 @@ body.show-modal .backdrop {
     height: 281px;
     margin-bottom: 0;
   }
-
-}
-.book-image{
-  border-radius: 8px;
-  border: 1px solid #111111;
-
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-
   
 
 }
@@ -172,8 +199,8 @@ body.show-modal .backdrop {
 
 .book-description{
   width: 287px;
-  height: 70px;
-  border: 1px solid #111111;
+  // height: 70px;
+  // border: 1px solid #111111;
   margin-bottom: 14px;
 
   font-family: 'DM Sans';
