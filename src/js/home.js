@@ -102,7 +102,7 @@ function createBookCard(category) {
 function updateBooksPerCategory() {
   const width = window.innerWidth;
   const booksPerCategory = width < 480 ? 1 : width < 780 ? 3 : 5;
-  const categories = document.querySelectorAll('.book__body, ul');
+  const categories = document.querySelectorAll('.book__body ul');
   categories.forEach(category => {
     const books = category.querySelectorAll('li');
     for (let i = 0; i < books.length; i++) {
