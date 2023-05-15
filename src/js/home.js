@@ -221,3 +221,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateBooksPerCategory();
 });
+export { document };
