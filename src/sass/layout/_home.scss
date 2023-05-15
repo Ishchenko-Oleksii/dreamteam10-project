@@ -3,20 +3,23 @@
   margin-bottom: 80px;
   margin-right: 20px;
   margin-left: 20px;
+  text-align: center;
 
-@media (min-width: 377px) {
+@media screen and (min-width: $mobile) {
   margin-right: 32px;
   margin-left: 32px;
+  
       }
-      @media (min-width: 770px) {
+      @media screen and (min-width: $desktop) {
         margin-left: 420px;
         margin-right: 24px;
+        
         
             }
 
   &__title{
     color: $darktheme-border-black;
-    font-family: 'DM Sans';
+    font-family: $main-font;
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -26,26 +29,26 @@
     margin-bottom: 40px;
     margin-left: 20px;
 
-    @media (min-width: 377px) {
+    @media screen and (min-width: $mobile) {
       font-weight: 700;
       font-size: 48px;
       line-height: 1.08;
       margin-top: 100px;
       margin-left: 32px;
       }
-      @media (min-width: 770px) {
+      @media screen and (min-width: $desktop) {
         margin-left: 420px;
             }
   }
   &__title_span {
     color: $button-background;
-    font-family: 'DM Sans';
+    font-family: $main-font;
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
     line-height: 1.18;
     letter-spacing: -0.04em;
-    @media (min-width: 377px) {
+    @media screen and (min-width: $mobile) {
       font-weight: 700;
       font-size: 48px;
       line-height: 1.08;
@@ -57,12 +60,12 @@
     margin-bottom: 86px;
     position: relative;
 
-@media (min-width: 770px) {
+    @media screen and (min-width: $tablet) {
         
         max-width: 996px;
             }
     &__button {
-      font-family: 'DM Sans';
+      font-family: $main-font;
       font-style: normal;
       font-weight: 700;
       font-size: 14px;
@@ -76,20 +79,20 @@
     }
 
   &__list {
-    @media (min-width: 377px) {
+    @media screen and (min-width: $mobile) {
     display: flex;
     gap: 25px;
     }
   }
   &__item{
-    @media (min-width: 377px) {
+    @media screen and (min-width: $mobile) {
       width: 218px;
       height: auto;
       }
     
   }
     &__category {
-      font-family: 'DM Sans';
+      font-family: $main-font;
       font-style: normal;
       font-weight: 400;
       font-size: 14px;
@@ -97,8 +100,10 @@
       letter-spacing: 0.03em;
       text-transform: uppercase;
       padding-bottom: 18px;
+      text-align: start;
+      color: $category-backgr-color-grey;
 
-      @media (min-width: 377px) {
+      @media screen and (min-width: $mobile) {
         line-height: 1.71;
         }
     }
@@ -109,15 +114,16 @@
       height: auto;
       object-fit: cover;
       border-radius: 8px;
+      text-align: start;
 
-      @media (min-width: 377px) {
+      @media screen and (min-width: $mobile) {
         max-width: 100%;
         width: 218px;
         height: 316px;
         object-fit:cover;
       }
 
-      @media (min-width: 770px) {
+      @media screen and (min-width: $tablet) {
         max-width: 100%;
         width: 180px;
         height: 256px;
@@ -126,7 +132,7 @@
     }
     &__title {
       cursor: pointer;
-      font-family: 'DM Sans';
+      font-family: $main-font;
       font-style: normal;
       font-weight: 700;
       font-size: 16px;
@@ -136,20 +142,23 @@
       color: $darktheme-border-black;
       padding-bottom: 4px;
       padding-top: 14px;
+      text-align: start;
     }
     &__author {
       cursor: default;
-      font-family: 'DM Sans';
+      font-family: $main-font;
       font-style: italic;
       font-weight: 400;
       font-size: 12px;
       line-height: 1.16;
       letter-spacing: -0.04em;
       padding-bottom: 8px;
-      @media (min-width: 377px) {
+      text-align: start;
+      color: $category-backgr-color-grey;
+      @media screen and (min-width: $mobile) {
         padding-bottom: 20px;
         }
-        @media (min-width: 770px) {
+        @media screen and (min-width: $tablet) {
           padding-bottom: 32px;
           }
     }
@@ -177,7 +186,7 @@
         text-align: center;
         box-sizing: border-box;
         background-color: $hover-yellow;
-        font-family: 'DM Sans';
+        font-family: $main-font;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
