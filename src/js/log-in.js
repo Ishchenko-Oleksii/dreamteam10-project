@@ -114,6 +114,7 @@ function onSignUp(event) {
                 customer_avatar: '',
                 session_id: user.uid
             });
+            // Redirect to home page
             window.open('/')
         })
         .catch((error) => {
@@ -152,7 +153,7 @@ function onSignIn(event) {
             const currentUserDocument = await getDoc(currentUser);
             if (currentUserDocument.exists()) {
                 // Updating local storage
-                console.log("Document data:", currentUserDocument.data().shopping_list);
+                console.log("Document data (Shoping list):", currentUserDocument.data().shopping_list);
                 // localStorage.setItem(LOCALSTOR_KEY, JSON.stringify(currentUserDocument.data().shopping_list));
                 localStorage.setItem(LOCALSTOR_KEY, currentUserDocument.data().shopping_list);
             }
@@ -205,6 +206,7 @@ function onSignOut() {
                 shopping_list: localStorage.getItem(LOCALSTOR_KEY)
             });
         }
+        localStorage.removeItem(LOCALSTOR_KEY);
 
         // Redirect to home page
         window.open('/');
