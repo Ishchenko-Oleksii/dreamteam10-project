@@ -1,5 +1,5 @@
 import AP from './fetchById';
-import {createBookCard, document} from './home';
+import {document} from './home';
 import imageAmazon from '../images/amazon.svg';
 import imageBookShop from '../images/bookshop.svg';
 import imageImage from '../images/ibooks.svg';
@@ -146,10 +146,9 @@ function createMarkupBookModal(arrayInfoBook){
 
 
 function onShoppingListBtnClick(event){
-    if(arrShoppingList.length>0){
-        console.log('arrShoppingList[0]', arrShoppingList[0].currentBookAuthor);
-        console.log('currentBookInfo'.currentBookInfo.currentBookAuthor);
-    }
+    console.log('arrShoppingList[0]', arrShoppingList[0].currentBookAuthor);
+    console.log('currentBookInfo'.currentBookInfo.currentBookAuthor);
+    
     const indexBook=arrShoppingList.findIndex(book=>book.currentBookId===currentBookInfo.currentBookId);
     
     
@@ -162,8 +161,7 @@ function onShoppingListBtnClick(event){
         localStorage.setItem(STORAGE_KEY, JSON.stringify(arrShoppingList));
     }
     else{
-        arrShoppingList.push(currentBookInfo);
-       
+        arrShoppingList.push({...currentBookInfo});
         console.log('onShoppingListBtnClick add arrShoppingList=',arrShoppingList);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(arrShoppingList));
     }   
