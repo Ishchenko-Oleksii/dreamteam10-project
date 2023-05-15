@@ -2,13 +2,29 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 404px;
   height: 100%;
   background-color: $light-background;
   padding: 20px;
   box-sizing: border-box;
+  z-index: -1;
 }
-
+.aside-list-button{
+      color: rgba(17, 17, 17, 0.6);
+      background-color: transparent;
+}
+.selected-category{
+  color: #4F2EE8;
+}
+.aside-list {
+  width: 356px;
+  height: 472px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+  overflow: hidden;
+  margin-top: 40px;
+}
 @media only screen and (max-width: 768px) {
   .sidebar {
     display: block;
