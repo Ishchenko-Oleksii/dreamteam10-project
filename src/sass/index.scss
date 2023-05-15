@@ -1,9 +1,10 @@
 @import './common';
 
-@import './log-in';
+@import './layout/log-in';
 @import './layout/header';
 @import './layout/sitebar';
 
 @import './layout/home';
 @import './layout/supports-ukraine';
 @import './layout/modalBook';
+@import './components/buttons';
