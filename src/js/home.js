@@ -72,7 +72,7 @@ async function fetchBooks() {
       const bookTitle = document.createElement('p');
       bookTitle.textContent = book.title;
       bookTitle.className = "book__title";
-      if (book.title.length > 17) {
+      if (book.title.length > 15) {
         bookTitle.textContent = book.title.substring(0, 17) + '...';
       } else {
         bookTitle.textContent = book.title;
@@ -102,7 +102,7 @@ async function fetchBooks() {
   }
   function updateBooksPerCategory() {
     const width = window.innerWidth;
-    const booksPerCategory = width < 376 ? 1 : width < 769 ? 3 : 5;
+    const booksPerCategory = width < 480 ? 1 : width < 780 ? 3 : 5;
     const categories = document.querySelectorAll('.book__body ul');
     categories.forEach(category => {
       const books = category.querySelectorAll('li');
