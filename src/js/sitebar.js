@@ -9,8 +9,8 @@ async function fetchCategories() {
     console.log(response.data);
     let buttonId = 1;
     insertingCategories.insertAdjacentHTML(
-      'afterbegin', 
-      `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button">All categories</button></li>`
+      'afterbegin',
+      `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button selected-category">All categories</button></li>`
     );
     for (let i = 0; i < response.data.length; i++) {
       buttonId += 1;
@@ -29,17 +29,18 @@ function scrolling() {
     insertingCategories.scrollTop += delta;
   });
 }
+let selectedCategory = 'All categories';
 function attachEventListeners() {
-    let selectedCategory='All categories'
   const buttons = document.querySelectorAll('.aside-list-button');
   buttons.forEach(button => {
     button.addEventListener('click', function () {
       buttons.forEach(btn => {
         btn.classList.remove('selected-category');
       });
-      selectedCategory=this.textContent
+      selectedCategory = this.textContent;
       this.classList.add('selected-category');
-      console.log(selectedCategory)
+      console.log(selectedCategory);
     });
   });
 }
+export {selectedCategory, attachEventListeners};

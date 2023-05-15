@@ -7,6 +7,7 @@
   background-color: $light-background;
   padding: 20px;
   box-sizing: border-box;
+  z-index: 2;
 }
 .aside-list-button {
   color: rgba(17, 17, 17, 0.6);
@@ -23,6 +24,7 @@
   row-gap: 32px;
   overflow: hidden;
   margin-top: 40px;
+  margin-bottom: 86px;
 }
 @media only screen and (max-width: 768px) {
   .sidebar {
