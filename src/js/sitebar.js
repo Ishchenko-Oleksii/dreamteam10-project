@@ -9,7 +9,7 @@ async function fetchCategories() {
     console.log(response.data);
     let buttonId = 1;
     insertingCategories.insertAdjacentHTML(
-      'afterbegin',
+      'afterbegin', 
       <li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button">All categories</button></li>
     );
     for (let i = 0; i < response.data.length; i++) {
