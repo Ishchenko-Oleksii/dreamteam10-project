@@ -10,13 +10,13 @@ async function fetchCategories() {
     let buttonId = 1;
     insertingCategories.insertAdjacentHTML(
       'afterbegin', 
-      <li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button">All categories</button></li>
+      `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button">All categories</button></li>`
     );
     for (let i = 0; i < response.data.length; i++) {
       buttonId += 1;
       insertingCategories.insertAdjacentHTML(
         'beforeend',
-        <li class="category-aside-list"><button type="button" id="btnAsideListId${buttonId}" class="aside-list-button">${response.data[i].list_name}</button></li>
+        `<li class="category-aside-list"><button type="button" id="btnAsideListId${buttonId}" class="aside-list-button">${response.data[i].list_name}</button></li>`
       );
     }
     attachEventListeners();
