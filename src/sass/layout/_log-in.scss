@@ -203,13 +203,13 @@
   visibility: hidden;
 }
 
-.container__log-in .content .checkbox + label {
+.container__log-in .content .checkbox+label {
   vertical-align: middle;
   display: inline-block;
   width: 50%;
 }
 
-.container__log-in .content .checkbox + label:before {
+.container__log-in .content .checkbox+label:before {
   content: '\A';
   /* color: #999999; */
   font-family: Verdana;
@@ -230,7 +230,7 @@
   margin: -2px 8px 0 0;
 }
 
-.container__log-in .content .checkbox:checked + label:before {
+.container__log-in .content .checkbox:checked+label:before {
   content: '✓';
 }
 
