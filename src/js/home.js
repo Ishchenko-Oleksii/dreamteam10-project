@@ -49,10 +49,10 @@ function createBookCard(category) {
       bookItem.addEventListener('click', () => {
         console.log(`Book ${book.title} clicked`);
       });
-  
+
       const bookImageContainer = document.createElement('div');
       bookImageContainer.classList.add('book-image-container');
-  
+
       const bookImage = document.createElement('img');
       bookImage.src = book.book_image;
       bookImage.alt = book.title;
@@ -61,14 +61,14 @@ function createBookCard(category) {
       bookImage.classList.add('js-gallery-image');
       bookImage.setAttribute('data-id', book._id);
       bookImageContainer.appendChild(bookImage);
-  
+
       const quickView = document.createElement('div');
       quickView.classList.add('quick-view');
       quickView.textContent = 'QUICK VIEW';
       bookImageContainer.appendChild(quickView);
-  
+
       bookItem.appendChild(bookImageContainer);
-  
+
       const bookTitle = document.createElement('p');
       bookTitle.textContent = book.title;
       bookTitle.className = 'book__title';
@@ -78,12 +78,12 @@ function createBookCard(category) {
         bookTitle.textContent = book.title;
       }
       bookItem.appendChild(bookTitle);
-  
+
       const bookAuthor = document.createElement('p');
       bookAuthor.textContent = `${book.author}`;
       bookAuthor.className = 'book__author';
       bookItem.appendChild(bookAuthor);
-  
+
       list.appendChild(bookItem);
     });
   }
@@ -94,10 +94,10 @@ function createBookCard(category) {
   const button = document.createElement('button');
   button.textContent = 'See more';
   button.addEventListener('click', async () => {
-    const category = list_name; 
-    clearBookShell(); 
+    const category = list_name;
+    clearBookShell();
     try {
-      await fetchCategoryBooks(category); 
+      await fetchCategoryBooks(category);
     } catch (error) {
       console.error(error);
     }
@@ -142,8 +142,8 @@ async function fetchCategoryBooks(category) {
     const bookShell = document.querySelector('.bookShell');
     bookShell.classList.add('bookShell-category');
     data.forEach(book => {
-      const { book_image, title, author } = book; 
-      const bookElement = createBookElement(book_image, title, author); 
+      const { book_image, title, author } = book;
+      const bookElement = createBookElement(book_image, title, author);
       if (bookElement) {
         bookShell.appendChild(bookElement);
       }
@@ -205,7 +205,6 @@ function createBookElement(book_image, title, author) {
     bookAuthor.textContent = author;
   }
   bookItem.appendChild(bookAuthor);
-  
 
   return bookItem;
 }
@@ -223,4 +222,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   updateBooksPerCategory();
 });
 
-
+export { document };
