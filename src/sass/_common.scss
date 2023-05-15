@@ -7,6 +7,19 @@ $hover-yellow: #eac645;
 $light-background: #ffffff;
 $category-backgr-color-grey: #b4afaf;
 
+$main-font: 'DM Sans', sans-serif;
+
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1280px;
+
+body {
+  font-family: $main-font;
+  color: $darktheme-border-black;
+  background-color: $light-background;
+  min-height: 100%;
+}
+
 button {
   border: none;
   cursor: pointer;
