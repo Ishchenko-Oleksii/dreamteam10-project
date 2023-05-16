@@ -108,6 +108,8 @@ function createBookCard(category) {
 
   return card;
 }
+
+
 function updateBooksPerCategory() {
   const width = window.innerWidth;
   const booksPerCategory = width < 480 ? 1 : width < 780 ? 3 : 5;
@@ -133,6 +135,13 @@ function clearBookShell() {
     bookShell.removeChild(bookShell.firstChild);
   }
 }
+function updateCategoryTitle(category) {
+  const categoryTitle = document.querySelector('.bookShell__title');
+  const categoryWords = category.split(' ');
+  const firstWord = categoryWords.shift();
+  categoryTitle.innerHTML = `${firstWord} <span class="bookShell__title_span">${categoryWords.join(' ')}</span>`;
+}
+
 
 async function fetchCategoryBooks(category) {
   const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
@@ -141,6 +150,7 @@ async function fetchCategoryBooks(category) {
     const data = response.data;
     const bookShell = document.querySelector('.bookShell');
     bookShell.classList.add('bookShell-category');
+    updateCategoryTitle(category);
     data.forEach(book => {
       const { book_image, title, author } = book;
       const bookElement = createBookElement(book_image, title, author);
