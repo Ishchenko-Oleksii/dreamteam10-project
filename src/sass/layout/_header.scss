@@ -143,8 +143,8 @@ header {
 .navigation {
   display: none;
 }
-@media screen and (min-width: 768px){
-  .navigation{
+@media screen and (min-width: 768px) {
+  .navigation {
     display: block;
     margin-left: 40px;
     &-list {
@@ -206,7 +206,7 @@ header {
   left: 20px;
   top: 20px;
 }
-.user-name{
+.user-name {
   font-family: $main-font;
   font-style: normal;
   font-weight: 700;
@@ -217,21 +217,21 @@ header {
   color: $light-background;
 }
 
-
-@media screen and (min-width: 768px){
-  .open-menu-icon, .close-menu-icon{
+@media screen and (min-width: 768px) {
+  .open-menu-icon,
+  .close-menu-icon {
     display: none;
   }
 }
 
-.is-hidden{
+.is-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
   margin: -1px;
   border: 0;
   padding: 0;
-    
+
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
@@ -253,5 +253,12 @@ header {
 
 body.dark,
 body.dark .toggle {
-  background-color: $darktheme-border-black;
+  background-color: $background-dark;
+}
+
+body.dark .book__title .bookShell__title {
+  color: $light-background;
+}
+body.dark .book__button {
+  background-color: $background-dark;
 }
