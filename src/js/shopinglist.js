@@ -81,9 +81,9 @@ function createMarkup(books) {
     .join('');
 }
 
-const booksContainer = document.getElementById('booksContainer');
+const booksContainer = document.getElementsByClassName('booksContainer')[0];
 while (booksContainer.firstChild) {
   booksContainer.firstChild.remove();
 }
 
-document.getElementById('booksContainer').innerHTML = createMarkup(books);
+booksContainer.innerHTML = createMarkup(books);

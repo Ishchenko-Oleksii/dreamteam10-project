@@ -5,3 +5,4 @@ import './js/home';
 import './js/supportUkraine';
 import './js/fetchById';
 import './js/modalBook';
+import './js/shopinglist';
