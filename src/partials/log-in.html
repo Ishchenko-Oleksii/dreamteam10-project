@@ -1,20 +1,31 @@
 <section class="container__log-in">
+    <!-- <div> -->
+    <svg class="modal__button-close-icon">
+        <use href="./images/icons.svg#icon-mail"></use>
+    </svg>
+    <!-- </div> -->
+
 
     <div>
         <div>
             <!-- <input type="button" value="Sign up" class="submit-in js-signup-btn"> -->
             <input class="js-signup-btn" type="button" value="Sign up" data-modal-open>
         </div>
-
+        <svg class="icon-mail" style="">
+            <use href="./images/icons.svg#icon-mail"></use>
+        </svg>
         <div>
             <input type="button" value="Log out" class="submit-out js-signout">
         </div>
     </div>
 
-    <article class="forms hidden" data-modal>
+    <article class="backdrop forms hidden" data-modal>
 
         <div class="content">
-            <button class="modal__button-close" style=" width: 15px; height: 15px; background: red;" data-modal-close>
+            <button class="modal__button-close" style=" width: 15px; height: 15px;" data-modal-close>
+                <svg class="modal__button-close-icon">
+                    <use href="./images/icons.svg#icon-x-close"></use>
+                </svg>
                 <!-- <svg class="modal__icon-close">
                     <use href="./images/icons.svg#close"></use>
                 </svg> -->
@@ -25,6 +36,7 @@
                     <label for="name">name</label>
                     <input type="email" name="email" id="email" class="inpt" required="required" placeholder="email">
                     <label for="email">email</label>
+
                     <input type="password" name="password" id="password" class="inpt" required="required"
                         placeholder="password">
                     <label for="password">password</label>

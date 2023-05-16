@@ -12,5 +12,6 @@ export function modaSignUp(params) {
 
     function toggleModal() {
         refs.modal.classList.toggle("hidden");
+        refs.modal.classList.toggle("is-hidden");
     }
 })();
