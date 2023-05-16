@@ -165,7 +165,8 @@ async function fetchCategoryBooks(category) {
       noBooksMsg.textContent = 'No books found';
       noBooksMsg.style.textAlign = 'center';
       bookShell.appendChild(noBooksMsg);
-    }
+    } 
+    document.documentElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
     return data;
   } catch (error) {
     console.error(error);
