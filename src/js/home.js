@@ -65,6 +65,7 @@ function createBookCard(category) {
       const quickView = document.createElement('div');
       quickView.classList.add('quick-view');
       quickView.textContent = 'QUICK VIEW';
+      quickView.setAttribute('data-id', book._id);
       bookImageContainer.appendChild(quickView);
 
       bookItem.appendChild(bookImageContainer);
@@ -152,8 +153,8 @@ async function fetchCategoryBooks(category) {
     bookShell.classList.add('bookShell-category');
     updateCategoryTitle(category);
     data.forEach(book => {
-      const { book_image, title, author } = book;
-      const bookElement = createBookElement(book_image, title, author);
+      const { _id, book_image, title, author } = book;
+      const bookElement = createBookElement(book_image, title, author, _id);
       if (bookElement) {
         bookShell.appendChild(bookElement);
       }
@@ -171,11 +172,11 @@ async function fetchCategoryBooks(category) {
   }
 }
 
-function createBookElement(book_image, title, author) {
+function createBookElement(book_image, title, author, _id) {
   const bookItem = document.createElement('div');
   bookItem.className = 'book';
   bookItem.addEventListener('click', () => {
-    console.log(`Book ${title} clicked`);
+    console.log(`Book ${title} clicked, ID: ${_id}`);
   });
 
   const bookImageContainer = document.createElement('div');
@@ -187,11 +188,13 @@ function createBookElement(book_image, title, author) {
   bookImage.loading = 'lazy';
   bookImage.className = 'book__img';
   bookImage.classList.add('js-gallery-image');
+  bookImage.setAttribute('data-id', _id);
   bookImageContainer.appendChild(bookImage);
 
   const quickView = document.createElement('div');
   quickView.classList.add('quick-view');
   quickView.textContent = 'QUICK VIEW';
+  quickView.setAttribute('data-id', _id);
   bookImageContainer.appendChild(quickView);
 
   bookItem.appendChild(bookImageContainer);
@@ -231,4 +234,4 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateBooksPerCategory();
 });
-export { document };
+
