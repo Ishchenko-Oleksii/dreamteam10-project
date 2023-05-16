@@ -3,7 +3,6 @@ import imageAmazon from '../images/amazon.svg';
 import imageBookShop from '../images/bookshop.svg';
 import imageIBooks from '../images/ibooks.svg';
 
-
 const refs={
     div: document.querySelector('.bookShell'),
    
@@ -67,13 +66,11 @@ function onItemGalleryBooksClick(event){
 function onOpenModal() {
     window.addEventListener('keydown', onEscKeyPress);
     document.body.classList.add('js-show-modal');
-
 }
   
 function onCloseModal() {
     window.removeEventListener('keydown', onEscKeyPress);
     document.body.classList.remove('js-show-modal');
-
 }
 
 function onBackdropClick(event) {
