@@ -8,7 +8,7 @@ const firebaseConfig = {
 };
 
 // Import the functions you need from the SDKs you need
-
+import { modaSignUp } from "./modal-signup";
 import { initializeApp } from "firebase/app";
 
 import {
@@ -62,10 +62,19 @@ const signinCont = document.querySelector('.signin-cont');
 const signupCont = document.querySelector('.signup-cont');
 const signup = document.querySelector('.signup');
 const signin = document.querySelector('.signin');
+const signUpBtn = document.querySelector('.js-signup-btn');
+const content = document.querySelector('.content');
 
 
 const tabs = document.querySelector('.tabs');
 // console.log(tabs);
+
+
+modaSignUp();
+
+signUpBtn.addEventListener('click', () => {
+    content.hidden;
+})
 
 tabs.addEventListener('click', changeTab);
 function changeTab(event) {
