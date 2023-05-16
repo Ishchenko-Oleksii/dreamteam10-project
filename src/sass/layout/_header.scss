@@ -256,9 +256,22 @@ body.dark .toggle {
   background-color: $background-dark;
 }
 
-body.dark .book__title .bookShell__title {
+body.dark .bookShell__title {
+  color: yellow;
+}
+body.dark .book__title {
   color: $light-background;
 }
 body.dark .book__button {
   background-color: $background-dark;
+  color: $light-background;
+}
+body.dark .book__button:hover {
+  background-color: $button-background;
+  color: $light-background;
+}
+
+body.dark .book__button:focus {
+  background-color: $button-background;
+  color: $background-dark;
 }
