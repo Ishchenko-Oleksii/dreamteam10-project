@@ -1,17 +1,19 @@
 import API from './fetchById';
-import {document} from './home';
 import imageAmazon from '../images/amazon.svg';
 import imageBookShop from '../images/bookshop.svg';
-import imageImage from '../images/ibooks.svg';
+import imageIBooks from '../images/ibooks.svg';
+
 
 const refs={
     div: document.querySelector('.bookShell'),
+   
     closeModalBtn: document.querySelector('[data-action="close-modal"]'),
     backdrop: document.querySelector('.js-backdrop'),
     bookCard: document.querySelector('.js-book-card'),
     shoppingListBtn: document.querySelector('[data-action="shopping-list-modal"]'),
     text: document.querySelector('.js-modal-text'),
 }
+
 const STORAGE_KEY = 'info-shopping-list';
 
 let currentBookInfo={};
@@ -21,6 +23,7 @@ const savedData=localStorage.getItem(STORAGE_KEY);
 let arrShoppingList=JSON.parse(savedData) || [];
 
 refs.div.addEventListener('click',onItemGalleryBooksClick);
+
 refs.closeModalBtn.addEventListener('click', onCloseModal);
 refs.backdrop.addEventListener('click', onBackdropClick);
 refs.shoppingListBtn.addEventListener('click', onShoppingListBtnClick);
@@ -28,8 +31,10 @@ refs.shoppingListBtn.addEventListener('click', onShoppingListBtnClick);
 function onItemGalleryBooksClick(event){
     event.preventDefault();
 
+    const isDivQuickViewEl=event.target.classList.contains('quick-view');
     const isImageGalleryEl=event.target.classList.contains('js-gallery-image');
-    if(!isImageGalleryEl){
+ 
+    if(!isImageGalleryEl && !isDivQuickViewEl){
         return;
     }
 
@@ -56,7 +61,7 @@ function onItemGalleryBooksClick(event){
     .catch(err=>console.err('Ooops! Something went wrong!'));
 
     onOpenModal();
-    
+       
 }
 
 function onOpenModal() {
@@ -100,8 +105,7 @@ function createMarkupBookModal(arrayInfoBook){
     currentBookInfo.bookShop=buy_links[4].url;
 
     const markup=
-    `<div class="img-thumb"><img class="book-image"" src="${book_image}" alt="${title}" loading="lazy" data-id="${_id}"/>
-    </div>
+    `<img class="book-image"" src="${book_image}" alt="${title}" loading="lazy" data-id="${_id}"/>
     <div class="book-description-thumb">
     <p class="book-title">${title}</p>
     <p class="book-author">${author}</p>
@@ -111,7 +115,7 @@ function createMarkupBookModal(arrayInfoBook){
     <img src="${imageAmazon}" width="62px" height="19px"/>
     </a>
     <a class="book-buy-url" href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener">
-    <img src="${imageImage}" width="33px" height="32px"/>
+    <img src="${imageIBooks}" width="33px" height="32px"/>
     </a>
     <a class="book-buy-url" href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener">
     <img src="${imageBookShop}" width="38px" height="36px"/>
