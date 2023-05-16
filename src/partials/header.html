@@ -18,18 +18,24 @@
                 </li>
             </ul>
         </nav>
+        <div>
         <div class="theme-switcher">
             <label class="form-switch">
                 <input type="checkbox" id="theme-switch-toggle" />
                 <i></i>
             </label>
         </div>
-        <div class="burger-menu-icon">
-            <svg class="menu-icon" width="28" height="28">
+
+        <button type="button" class="open-menu-icon">
+            <svg width="28" height="28">
                 <use href="./images/icons.svg#icon-align-left"></use>
             </svg>
-        </div>
-        <div class="burger-menu"></div>
+        </button>
+        <button type="button" class="close-menu-icon is-hidden">
+            <svg width="28" height="28">
+                <use href="./images/icons.svg#icon-x-close"></use>
+            </svg>
+        </button>
     </div>
 </header>
-<div class="burger-menu"></div>
+<div class="burger-menu is-hidden"></div>

@@ -63,15 +63,22 @@
       flex-wrap: wrap;
       gap: 25px;
       }
+      @media screen and (min-width: $tablet) {
+        
+        max-width: 996px;
+        
+            }
   }
 
   .book{
     margin-bottom: 86px;
     position: relative;
+    margin-top: 40px;
 
     @media screen and (min-width: $tablet) {
         
         max-width: 996px;
+        margin-bottom: 0px;
             }
     &__button {
       font-family: $main-font;
@@ -81,10 +88,21 @@
       line-height: 1.28;
       letter-spacing: -0.01em;
       text-transform: uppercase;
-      padding: 14px 28px;
+      padding: 14px;
       position: absolute;
       right: 0;
-      
+      width: 124px;
+      height: 46px;
+      background-color: $light-background;
+      border: 2px solid $button-background;
+      border-radius: 40px;
+      color: $darktheme-border-black;
+
+      &:hover,
+      &:focus {
+    background-color: $button-background;
+    color: $light-background;
+  }
     }
 
   &__list {
@@ -92,6 +110,7 @@
     display: flex;
     gap: 25px;
     }
+   
   }
   &__item{
     @media screen and (min-width: $mobile) {
@@ -111,6 +130,7 @@
       padding-bottom: 18px;
       text-align: start;
       color: $category-backgr-color-grey;
+      padding-top: 20px;
 
       @media screen and (min-width: $mobile) {
         line-height: 1.71;
@@ -170,6 +190,7 @@
           }
     }
     
+    
   }
 
   .author{
@@ -215,15 +236,16 @@
         opacity: 1;
       }
 
-      .bookShell-category .book__item {
+      .bookShell-category .book {
         flex-basis: calc(100% / 3 - 20px);
         box-sizing: border-box;
-        padding: 10px;
 
         @media  (min-width:780px) {
           flex-basis: calc(100% / 5 - 20px);
           }
-      }
+          
+      } 
+      
         
 
       

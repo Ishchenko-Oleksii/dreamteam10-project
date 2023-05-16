@@ -65,6 +65,7 @@ function createBookCard(category) {
       const quickView = document.createElement('div');
       quickView.classList.add('quick-view');
       quickView.textContent = 'QUICK VIEW';
+      quickView.setAttribute('data-id', book._id);
       bookImageContainer.appendChild(quickView);
 
       bookItem.appendChild(bookImageContainer);
@@ -108,6 +109,8 @@ function createBookCard(category) {
 
   return card;
 }
+
+
 function updateBooksPerCategory() {
   const width = window.innerWidth;
   const booksPerCategory = width < 480 ? 1 : width < 780 ? 3 : 5;
@@ -133,6 +136,13 @@ function clearBookShell() {
     bookShell.removeChild(bookShell.firstChild);
   }
 }
+function updateCategoryTitle(category) {
+  const categoryTitle = document.querySelector('.bookShell__title');
+  const categoryWords = category.split(' ');
+  const firstWord = categoryWords.shift();
+  categoryTitle.innerHTML = `${firstWord} <span class="bookShell__title_span">${categoryWords.join(' ')}</span>`;
+}
+
 
 async function fetchCategoryBooks(category) {
   const url = `https://books-backend.p.goit.global/books/category?category=${category}`;
@@ -141,9 +151,10 @@ async function fetchCategoryBooks(category) {
     const data = response.data;
     const bookShell = document.querySelector('.bookShell');
     bookShell.classList.add('bookShell-category');
+    updateCategoryTitle(category);
     data.forEach(book => {
-      const { book_image, title, author } = book;
-      const bookElement = createBookElement(book_image, title, author);
+      const { _id, book_image, title, author } = book;
+      const bookElement = createBookElement(book_image, title, author, _id);
       if (bookElement) {
         bookShell.appendChild(bookElement);
       }
@@ -161,11 +172,11 @@ async function fetchCategoryBooks(category) {
   }
 }
 
-function createBookElement(book_image, title, author) {
+function createBookElement(book_image, title, author, _id) {
   const bookItem = document.createElement('div');
   bookItem.className = 'book';
   bookItem.addEventListener('click', () => {
-    console.log(`Book ${title} clicked`);
+    console.log(`Book ${title} clicked, ID: ${_id}`);
   });
 
   const bookImageContainer = document.createElement('div');
@@ -177,11 +188,13 @@ function createBookElement(book_image, title, author) {
   bookImage.loading = 'lazy';
   bookImage.className = 'book__img';
   bookImage.classList.add('js-gallery-image');
+  bookImage.setAttribute('data-id', _id);
   bookImageContainer.appendChild(bookImage);
 
   const quickView = document.createElement('div');
   quickView.classList.add('quick-view');
   quickView.textContent = 'QUICK VIEW';
+  quickView.setAttribute('data-id', _id);
   bookImageContainer.appendChild(quickView);
 
   bookItem.appendChild(bookImageContainer);
@@ -221,4 +234,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateBooksPerCategory();
 });
-export { document };
+ 
+
