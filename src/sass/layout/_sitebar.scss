@@ -16,6 +16,21 @@
 .selected-category {
   color: #4f2ee8;
 }
+.aside-list-button {
+  color: rgba(17, 17, 17, 0.6);
+  background-color: transparent;
+  transition: color 0.5s ease-in-out;
+}
+
+.aside-list-button:hover,
+.aside-list-button:focus {
+  color: #4f2ee8;
+  transition: color 0.5s ease-in-out;
+}
+   
+.selected-category {
+  color: #4f2ee8;
+}
 .aside-list {
   width: 356px;
   height: 472px;
