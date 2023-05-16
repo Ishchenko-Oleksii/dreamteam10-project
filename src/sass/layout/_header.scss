@@ -141,45 +141,53 @@ header {
 }
 
 .navigation {
-  &-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 76px;
-  }
-  &-item {
-    padding: 8px 16px;
-    border-radius: 36px;
-    text-align: center;
-    margin-left: 24px;
-    color: $darktheme-border-black;
-
-    &:hover,
-    &:focus {
-      background-color: $hover-yellow;
-      color: $darktheme-border-black;
+  display: none;
+}
+@media screen and (min-width: 768px){
+  .navigation{
+    display: block;
+    margin-left: 40px;
+    &-list {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
     }
   }
-  &-link {
-    font-family: $main-font;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 1.29;
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
+}
 
-    color: inherit;
+.navigation-item {
+  padding: 8px 16px;
+  border-radius: 36px;
+  text-align: center;
+  margin-left: 24px;
+  color: $darktheme-border-black;
+
+  &:hover,
+  &:focus {
+    background-color: $hover-yellow;
+    color: $darktheme-border-black;
   }
+}
+.navigation-link {
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: inherit;
 }
 
 .navigation-burger {
   margin-top: 183px;
   &-list {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
     flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     gap: 9px;
   }
   &-item {
@@ -193,28 +201,46 @@ header {
   bottom: 80px;
 }
 
-.btn-user-burger {
+.user-burger {
   position: absolute;
   left: 20px;
   top: 20px;
-  background-color: transparent;
-  border: 0px;
+}
+.user-name{
+  font-family: $main-font;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.32;
+  letter-spacing: -0.02em;
+
+  color: $light-background;
 }
 
-.burger-menu-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #d11212;
+
+@media screen and (min-width: 768px){
+  .open-menu-icon, .close-menu-icon{
+    display: none;
+  }
 }
 
-.menu-icon {
-  fill: $darktheme-border-black;
+.is-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+    
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 .burger-conteiner {
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 64px;
   width: 100%;
   height: 100%;
