@@ -1,13 +1,24 @@
 <section class="container__log-in">
 
     <div>
-        <input type="button" value="Log out" class="submit-out js-signout">
+        <div>
+            <!-- <input type="button" value="Sign up" class="submit-in js-signup-btn"> -->
+            <input class="js-signup-btn" type="button" value="Sign up" data-modal-open>
+        </div>
+
+        <div>
+            <input type="button" value="Log out" class="submit-out js-signout">
+        </div>
     </div>
 
-    <article class="forms">
+    <article class="forms hidden" data-modal>
 
         <div class="content">
-
+            <button class="modal__button-close" style=" width: 15px; height: 15px; background: red;" data-modal-close>
+                <!-- <svg class="modal__icon-close">
+                    <use href="./images/icons.svg#close"></use>
+                </svg> -->
+            </button>
             <div class="signup-cont cont">
                 <form action="submit" method="post" enctype="multipart/form-data" class="js-form-signup">
                     <input type="name" name="name" id="name" class="inpt" required="required" placeholder="NAME">
