@@ -224,3 +224,8 @@ header {
     $light-background 100%
   );
 }
+
+body.dark,
+body.dark .toggle {
+  background-color: $darktheme-border-black;
+}
