@@ -1,8 +1,6 @@
 p{
   padding: 0;
-
 }
-
 
 a{
   padding: 0;
@@ -40,11 +38,10 @@ body.js-show-modal .modal {
 .modal {
   padding: 40px 24px;
   border-radius: 18px;
-  background-color: #fff; 
-  border: 2px solid #111111;
+  background-color: $light-background; 
+  border: 2px solid $darktheme-border-black;
 
   width: 100%;
-
   max-width: 270px;
   min-height: 762px;
  
@@ -78,8 +75,8 @@ body.js-show-modal .modal {
   padding: 0;
   cursor: pointer;
 
-  background-color: #fff;
-  color: #111111;
+  background-color: $light-background;
+  color: $darktheme-border-black;
 
   border: none;
 
@@ -88,7 +85,7 @@ body.js-show-modal .modal {
 
 .modal__button-close:focus,
 .modal__button-close:hover {
-    color: #4F2EE8;
+    color: $button-background;
 }
 
 .modal__button-close-icon{
@@ -141,10 +138,10 @@ body.js-show-modal .modal {
   letter-spacing: -0.01em;
   text-transform: uppercase;
 
-  border: 2px solid #4F2EE8;
+  border: 2px solid $button-background;
   border-radius: 40px;
-  background-color: #fff;
-  color: #111111;
+  background-color: $light-background;
+  color: $darktheme-border-black;
   text-align: center;
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -152,9 +149,15 @@ body.js-show-modal .modal {
 
 .modal__button-shopping-list:hover,
 .modal__button-shopping-list:focus{
-  background-color: #4F2EE8;
-  color: #FFFFFF;
+  background-color: $button-background;
+  color: $light-background;
 }
+
+.modal__button-shopping-list:focus{
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.15);
+
+}
+
 
 .modal__button-shopping-list--remove{
   @media screen and (max-width: 767px) {
@@ -174,6 +177,7 @@ body.js-show-modal .modal {
   
   color: rgba(17, 17, 17, 0.5);
 
+
   @media screen and (min-width: 768px) {
     font-size: 12px;
     line-height: 1.1667;
@@ -184,7 +188,7 @@ body.js-show-modal .modal {
 
 .book-image{
   border-radius: 8px;
-  border: 1px solid #111111;
+  border: 1px solid $darktheme-border-black;
 
   // height: 100%;
   // width: 100%;
@@ -193,7 +197,7 @@ body.js-show-modal .modal {
   width: 287px;
   height: 408px;
 
-  border: 1px solid #4F2EE8;
+  border: 1px solid $button-background;
   
   margin-bottom: 14px;
 
@@ -213,7 +217,7 @@ body.js-show-modal .modal {
   line-height: 1.125;
   letter-spacing: -0.04em;
   
-  color: #111111;
+  color: $darktheme-border-black;
 
   margin-bottom: 4px;
 
@@ -252,7 +256,7 @@ body.js-show-modal .modal {
   font-size: 14px;
   line-height: 1.2857;
   letter-spacing: -0.04em;
-  color: #111111;
+  color: $darktheme-border-black;
 
 }
 
@@ -274,8 +278,6 @@ body.js-show-modal .modal {
   filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
 }
 
-
-
 .visually-hidden {
   position: absolute;
   white-space: nowrap;
@@ -287,4 +289,47 @@ body.js-show-modal .modal {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   margin: -1px;
+}
+
+//темная тема для модалки
+body.dark.js-show-modal .modal{
+  background-color: $darktheme-border-black;
+  border: 2px solid $light-background;
+  color: $light-background;
+}
+
+body.dark.js-show-modal .modal__button-close{
+  background-color: $darktheme-border-black;
+  color: $light-background;
+
+}
+
+body.dark.js-show-modal .modal__button-close:hover,
+body.dark.js-show-modal .modal__button-close:focus{
+  color: $button-background;
+}
+
+body.dark.js-show-modal .modal__button-shopping-list{
+  background-color: $darktheme-border-black;
+  color: $light-background;
+}
+
+body.dark.js-show-modal .modal__button-shopping-list:hover,
+body.dark.js-show-modal .modal__button-shopping-list:focus{
+  background-color: $button-background;
+}
+body.dark.js-show-modal .book-title{
+  color: $light-background;
+}
+
+body.dark.js-show-modal .book-description{
+  color: $light-background;
+
+}
+body.dark.js-show-modal .modal__text{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+body.dark.js-show-modal .book-buy-icon{
+  fill:$light-background;
 }
