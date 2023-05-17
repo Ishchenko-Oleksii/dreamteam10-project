@@ -7,19 +7,50 @@ async function fetchBooks() {
     const response = await axios.get(url);
     const data = response.data;
     const bookShell = document.querySelector('.bookShell');
-    data.forEach(book => {
-      const card = createBookCard(book);
-      if (card) {
-        bookShell.appendChild(card);
-      }
-      if (data.length === 0) {
-        const bookShell = document.querySelector('.bookShell');
-        const noBooksMsg = document.createElement('div');
-        noBooksMsg.textContent = 'No books found';
-        noBooksMsg.style.textAlign = 'center';
-        bookShell.appendChild(noBooksMsg);
+    const loadedCategories = []; 
+    const cardsToCreate = data.slice(0, 5);
+
+    cardsToCreate.forEach((book) => {
+      if (!loadedCategories.includes(book.list_name)) {
+        const card = createBookCard(book);
+        if (card) {
+          bookShell.appendChild(card);
+          loadedCategories.push(book.list_name); 
+        }
       }
     });
+
+    if (data.length === 0) {
+      const bookShell = document.querySelector('.bookShell');
+      const noBooksMsg = document.createElement('div');
+      noBooksMsg.textContent = 'No books found';
+      noBooksMsg.style.textAlign = 'center';
+      bookShell.appendChild(noBooksMsg);
+    }
+
+    const loadMoreBooks = () => {
+      if (
+        window.innerHeight + window.scrollY >= document.body.offsetHeight
+      ) {
+        const remainingBooks = data.slice(5);
+        remainingBooks.forEach((book) => {
+          if (!loadedCategories.includes(book.list_name)) {
+            const card = createBookCard(book);
+            if (card) {
+              bookShell.appendChild(card);
+              loadedCategories.push(book.list_name); 
+            }
+          }
+        });
+
+        if (remainingBooks.length === 0) {
+          window.removeEventListener('scroll', loadMoreBooks);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', loadMoreBooks);
+
     return data;
   } catch (error) {
     console.error(error);
