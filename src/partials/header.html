@@ -25,18 +25,18 @@
                 </label>
             </div>
 
-            <button type="button" class="open-menu-icon">
+            <button type="button" class="open-menu-icon js-open-menu">
                 <svg width="28" height="28">
                     <use href="./images/icons.svg#icon-align-left"></use>
                 </svg>
             </button>
-            <button type="button" class="close-menu-icon is-hidden">
+            <button type="button" class="close-menu-icon js-close-menu is-hidden">
                 <svg width="28" height="28">
                     <use href="./images/icons.svg#icon-x-close"></use>
                 </svg>
             </button>
 
-            <button class="button_signup">Sign up
+            <button class="button_signup header-signup-btn js-signup-btn" type="button" value="" data-modal-open>Sign up
                 <svg width="20" height="20">
                   <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
                 </svg>
@@ -55,14 +55,40 @@
     </div>
 
 
-    <div class="authentication">
+    <!-- <div class="authentication">
         <button class="js-signup-btn" type="button" value="" data-modal-open>Sign up</button>
 
         <button class=" js-signout" type="button" value="">Log out</button>
-        <!-- submit-out // it is class for this button-->
+        submit-out // it is class for this button
 
-    </div>
-
-
+    </div> -->
 </header>
-<div class="burger-menu is-hidden"></div>
+<div class="burger-menu js-burger-menu">
+    <div class="burger-conteiner">
+        <div class="user-burger">
+          <div class="avatar">
+            <img class="avatar_img" src="" alt="">
+          </div>
+          <p class="user-name">Stephen</p>
+        </div>
+      
+        <nav class="navigation-burger">
+          <ul class="navigation-burger-list">
+            <li class="navigation-item navigation-burger-item"><a class="navigation-link" href="#">Home</a></li>
+            <li class="navigation-item navigation-burger-item">
+              <a class="navigation-link" href="#">Shopping List
+                <svg width="20" height="20">
+                  <use href="/images/icons.svg#icon-lock"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      
+        <button class="button_logout btn-logout-burger js-signout submit-out" type="button" value="">Log out
+          <svg width="20" height="20">
+            <use href="/images/icons.svg#icon-arrow-narrow-right"></use>
+          </svg>
+        </button>
+    </div>
+</div>
