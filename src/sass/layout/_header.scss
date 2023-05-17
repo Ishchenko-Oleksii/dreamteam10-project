@@ -253,6 +253,12 @@ header {
   }
 }
 
+.burger-menu {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
 @media screen and (min-width: 768px) {
   .burger-menu {
     display: none;
@@ -262,18 +268,18 @@ header {
 .burger-conteiner {
   position: fixed;
   z-index: 3;
-  top: 64px;
+  top: 72px;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(
-      183.6% 183.01% at 59.76% -23.42%,
-      $button-background 18.03%,
-      $light-background 100%
-    ),
-    url(../images/Bakground_of_books.png);
+  background-image: url(../images/Bakground_of_books.png),
+  radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    $button-background 18.03%,
+    $light-background 100%
+  );
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
+  background-size: contain;
 }
 
 .is-hidden {
