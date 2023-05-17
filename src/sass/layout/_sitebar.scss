@@ -1,20 +1,19 @@
 .sidebar {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 404px;
   height: 100%;
-  background-color: $light-background;
   padding: 20px;
   box-sizing: border-box;
   z-index: 2;
 }
-.aside-list-button{
-      color: rgba(17, 17, 17, 0.6);
-      background-color: transparent;
+.aside-list-button {
+  color: rgba(17, 17, 17, 0.6);
+  background-color: transparent;
 }
-.selected-category{
-  color: #4F2EE8;
+.selected-category {
+  color: #4f2ee8;
 }
 .aside-list-button {
   color: rgba(17, 17, 17, 0.6);
@@ -60,7 +59,7 @@
 }
 
 .aside-list::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
+  background: #e0e0e0;
   border-radius: 12px;
 }
 
@@ -123,4 +122,3 @@
   }
   
 }
-

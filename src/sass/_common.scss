@@ -1,11 +1,12 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
-
+@import '../../node_modules/swiper/swiper-bundle.min.css';
 $darktheme-border-black: #111111;
 $background-dark: #202024;
 $button-background: #4f2ee8;
 $hover-yellow: #eac645;
 $light-background: #ffffff;
-$category-backgr-color-grey: #b4afaf;
+$category-backgr-color-grey: #f6f6f6;
+$category-autors-text: #b4afaf;
 
 $main-font: 'DM Sans', sans-serif;
 
@@ -16,8 +17,10 @@ $desktop: 1280px;
 body {
   font-family: $main-font;
   color: $darktheme-border-black;
-  background-color: #d0d0d0;
+  background: $category-backgr-color-grey;
   min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 button {

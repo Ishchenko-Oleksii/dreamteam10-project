@@ -3,6 +3,7 @@
   font-family: 'DM Sans';
   font-style: normal;
   width: 335px;
+  margin: auto;
   border-radius: 16px;
   background: radial-gradient(
     183.6% 183.01% at 59.76% -23.42%,
@@ -10,9 +11,19 @@
     $light-background 100%
   );
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  @media screen and (min-width: $desktop) {
+    width: 356px;
+  }
 
   &__container {
-    padding: 24px 58px 26px 40px;
+    padding: 24px 58px 20px 40px;
+    height: 100%;
+    @media screen and (min-width: $tablet) {
+      padding: 24px 58px 14px 40px;
+    }
+    @media screen and (min-width: $desktop) {
+    padding: 24px 79px 24px 40px;
+  }
   }
 
   &__wrap {
@@ -29,22 +40,72 @@
     letter-spacing: -0.04em;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
+  &__button {
+    width: 32px;
+    height: 32px;
+    background-color: $light-background;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    transition: background-color 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    @media screen and (min-width: $tablet) {
+      width: 38px;
+      height: 38px;
+    }
+    &--wrap {
+      margin-top: 16px;
+      @media screen and (min-width: $tablet) {
+        margin-top: 32px;
+      }
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+    &:hover .support__button--icon,
+    &:focus .support__button--icon {
+      fill: $light-background;
+    }
+    &--icon {
+      z-index: 10;
+      width: 20px;
+      height: 20px;
+      transition: fill 0.3s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+      fill: $button-background;
+      @media screen and (min-width: $tablet) {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  }
+  &__list {
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+  &__item {
+    @media screen and (min-width: $tablet) {
+      height: auto;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
   &__icon {
     width: 20px;
     height: 32px;
     fill: $light-background;
-  }
-
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
+    z-index: 10;
+    align-items: center;
   }
 
   &__link {
     display: flex;
     align-items: center;
     color: currentColor;
+    height: 32px;
   }
 
   &__number {
@@ -53,17 +114,19 @@
     font-size: 14px;
     line-height: 1.28;
     letter-spacing: -0.04em;
+    @media screen and (min-width: $tablet) {
+    margin-right: 14px;
+  }
+    
   }
 
   &__img {
     filter: brightness(0) invert(1);
   }
+}
 
-  &__button {
-    align-items: center;
-    &--wrap {
-      margin-top: 16px;
-      text-align: center;
-    }
+.support--tablet {
+  @media screen and (min-width: $tablet) {
+    height: auto;
   }
 }
