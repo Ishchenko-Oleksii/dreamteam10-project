@@ -1,11 +1,13 @@
 @import './common';
+@import './components/buttons';
 
 @import './layout/log-in';
 @import './layout/header';
 @import './layout/sitebar';
+@import './layout/supports-ukraine';
+@import './components/slider';
 
 @import './layout/home';
+@import './layout/shoping-list';
 
 @import './layout/modalBook';
-@import './components/buttons';
-@import './layout/shoping-list';
