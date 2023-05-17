@@ -1,4 +1,6 @@
-const books = JSON.parse(localStorage.getItem('idBook')) || [];
+const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
+
+console.log(books);
 
 function createMarkup(books) {
   if (books.length === 0) {
@@ -87,3 +89,72 @@ while (booksContainer.firstChild) {
 }
 
 booksContainer.innerHTML = createMarkup(books);
+
+// function initializePage() {
+//   const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
+
+//   console.log(books);
+
+//   function createMarkup(books) {
+//     // Ваш код функции createMarkup...
+
+//     if (books.length === 0) {
+//       return `
+//       <div class="shoping-list__empty-page">
+//         <p class="shoping-list__empty-text">This page is empty, add some books and proceed to order.</p>
+//         <img class="shoping-list__empty-img" src="./src/images/emptyshopinglist.jpg" alt="Empty shelf">
+//       </div>
+//     `;
+//     }
+
+//     return books
+//       .map(
+//         ({
+//           bookTitle,
+//           bookImage,
+//           bookAuthor,
+//           bookDescription,
+//           bookCategory,
+//           bookAmazon,
+//           bookBookShop,
+//           bookOpenBook,
+//         }) => {
+//           // Ваш код для создания разметки...
+
+//           return `
+//         <div class="shoping-list__card">
+//         <img class="shoping-list__img" src="${bookImage}" alt="Book Cover" />
+//         <div class="shoping-list__text-container">
+//           <div class="shoping-list__button-container">
+//             <div class="shoping-list__second-text-container">
+//               <h3 class="shoping-list__name">${bookTitle}</h3>
+//               <p class="shoping-list__bind">${bookCategory}</p>
+//             </div>
+//                 <button class="button_trash"><svg width="18" height="18" class="icon_trash">
+//                     <use href="./images/icons.svg#icon-trash"></use>
+//                 </svg>
+//                 </button>
+//             </div>
+//           <p class="shoping-list__details">${bookDescription}</p>
+//           <div class="shoping-list__svg-container">
+//             <p class="shoping-list__author">${bookAuthor}</p>
+//             <ul class="shoping-list__links">${linksHtml.join('')}</ul>
+//           </div>
+//         </div>
+//       </div>
+//       `;
+//         }
+//       )
+//       .join('');
+//   }
+
+//   const booksContainer = document.getElementsByClassName('booksContainer')[0];
+//   while (booksContainer.firstChild) {
+//     booksContainer.firstChild.remove();
+//   }
+
+//   booksContainer.innerHTML = createMarkup(books);
+// }
+
+// // Вызывайте функцию initializePage только при загрузке страницы
+// window.addEventListener('load', initializePage);
