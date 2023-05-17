@@ -3,7 +3,6 @@ import imageAmazon from '../images/amazon.svg';
 import imageBookShop from '../images/bookshop.svg';
 import imageIBooks from '../images/ibooks.svg';
 import deleteButton from '../images/sprite.svg#icon-trash';
-import EmptyPicture from '../images/emptyshopinglist.jpg';
 
 console.log(books);
 
@@ -107,7 +106,6 @@ function renderBooks() {
 
   booksContainer.innerHTML = createMarkup(books);
 
-  // Добавляем обработчики события для кнопок удаления книги
   const deleteButtons = document.getElementsByClassName('button_trash');
   Array.from(deleteButtons).forEach(button => {
     const bookId = button.dataset.bookId;
