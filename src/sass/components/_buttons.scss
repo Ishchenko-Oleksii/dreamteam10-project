@@ -151,13 +151,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 34px;
-  height: 34px;
-  background-color: $button-background;
-  border: 1px solid $button-background;
-  border-radius: 50%;
-  color: $light-background;
+  background-color: $category-backgr-color-grey;
 }
 
 .icon_trash {
