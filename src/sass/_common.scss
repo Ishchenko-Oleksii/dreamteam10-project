@@ -17,8 +17,10 @@ $desktop: 1280px;
 body {
   font-family: $main-font;
   color: $darktheme-border-black;
-  background-color: $category-backgr-color-grey;
+  background: $category-backgr-color-grey;
   min-height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 button {

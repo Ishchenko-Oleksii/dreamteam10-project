@@ -4,7 +4,7 @@
   left: 0;
   width: 404px;
   height: 100%;
-  background-color: $light-background;
+  background-color: $category-backgr-color-grey;
   padding: 20px;
   box-sizing: border-box;
   z-index: 2;
@@ -60,7 +60,7 @@
 }
 
 .aside-list::-webkit-scrollbar-thumb {
-  background: #E0E0E0;
+  background: #e0e0e0;
   border-radius: 12px;
 }
 
