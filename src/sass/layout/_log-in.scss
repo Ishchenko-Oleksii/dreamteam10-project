@@ -14,9 +14,10 @@
 }
 
 .modal-log {
-  width: 579px;
+  max-width: 579px;
+  // width: 579px;
   height: 516px;
-  padding: 80px 40px 40px;
+  padding: 80px 40px 40px 40px;
   box-sizing: border-box;
   background-color: #F6F6F6;
   border: 2px solid #111111;
@@ -25,19 +26,40 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (max-width: $mobile) {
+    max-width: 355px;
+    padding: 40px 20px 20px;
+  }
 }
 
 .modal-log__button-close {
   width: 28px;
   height: 28px;
+  padding: 0;
   top: 24px;
   right: 24px;
   position: absolute;
+
+  @media screen and (max-width: $mobile) {
+    width: 14px;
+    height: 14px;
+    top: 14px;
+    right: 14px;
+  }
 }
 
 .modal-log__button-close-icon {
   width: 14px;
   height: 14px;
+}
+
+.forms {
+  width: 499px;
+
+  @media screen and (max-width: $mobile) {
+    max-width: 259px;
+  }
 }
 
 .form-fields {
@@ -310,6 +332,7 @@
   // position: absolute;
   bottom: 0;
   width: 100%;
+
 }
 
 .modal-log .submit-wrap a {
