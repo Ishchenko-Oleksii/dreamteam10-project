@@ -2,25 +2,25 @@
   height: 204px;
   @media screen and (min-width: $tablet) {
     height: 296px;
-    overflow-y: auto;
+    
   }
+}
+
+.swiper__scrollbar {
+  overflow-y: auto;
   &::-webkit-scrollbar {
-  width: 4px; /* Ширина скролла */
+  width: 6px; /* Ширина скролла */
 }
 
 &::-webkit-scrollbar-thumb {
-  background-color: $light-background; /* Цвет ползунка скролла */
+  background-color: #ffffff33;
+  border-radius: 12px;
 }
 
 &::-webkit-scrollbar-track {
-  background-color: radial-gradient(
-    183.6% 183.01% at 59.76% -23.42%,
-    $button-background 18.03%,
-    $light-background 100%
-  ); /* Цвет фона скролла */
+  background-color: transparent; /* Цвет фона скролла */
 }
 }
-
 .swiper--tablet {
   @media screen and (min-width: $tablet) {
     height: 306px;
