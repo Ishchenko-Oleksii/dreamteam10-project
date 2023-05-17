@@ -1,6 +1,5 @@
-export function modaSignUp(params) {
+export function modaSignUp() {
 
-} (() => {
     const refs = {
         openModalBtn: document.querySelector("[data-modal-open]"),
         closeModalBtn: document.querySelector("[data-modal-close]"),
@@ -12,5 +11,6 @@ export function modaSignUp(params) {
 
     function toggleModal() {
         refs.modal.classList.toggle("hidden");
+        // refs.modal.classList.toggle("is-hidden");
     }
-})();
+}

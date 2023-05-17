@@ -38,7 +38,7 @@ const db = getFirestore(app);
 
 const COLLECTION_CUSTOMERS = 'customers';
 
-const LOCALSTOR_KEY = 'bookId'; //key of localstorage
+const LOCALSTOR_KEY = 'info-shopping-list'; //key of localstorage
 
 var IS_CUSTOMER_LOGGED_IN = false;
 let CUSTOMER_SESSION_ID = '';
@@ -62,8 +62,8 @@ const signinCont = document.querySelector('.signin-cont');
 const signupCont = document.querySelector('.signup-cont');
 const signup = document.querySelector('.signup');
 const signin = document.querySelector('.signin');
-const signUpBtn = document.querySelector('.js-signup-btn');
-const content = document.querySelector('.content');
+// const signUpBtn = document.querySelector('.js-signup-btn');
+// const content = document.querySelector('.content');
 
 
 const tabs = document.querySelector('.tabs');
@@ -72,9 +72,9 @@ const tabs = document.querySelector('.tabs');
 
 modaSignUp();
 
-signUpBtn.addEventListener('click', () => {
-    content.hidden;
-})
+// signUpBtn.addEventListener('click', () => {
+//     content.hidden;
+// })
 
 tabs.addEventListener('click', changeTab);
 function changeTab(event) {
@@ -124,7 +124,8 @@ function onSignUp(event) {
                 session_id: user.uid
             });
             // Redirect to home page
-            window.open('/')
+            // window.open('/')
+            location.reload();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -168,7 +169,8 @@ function onSignIn(event) {
             }
 
             // Redirect to home page
-            window.open('/');
+            // window.open('/');
+            location.reload();
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -215,11 +217,16 @@ function onSignOut() {
                 shopping_list: localStorage.getItem(LOCALSTOR_KEY)
             });
         }
+        // debugger;
         localStorage.removeItem(LOCALSTOR_KEY);
+        localStorage.setItem('IS_CUSTOMER_LOGGED_IN', false);
 
         // Redirect to home page
-        window.open('/');
+        // window.open('/');
+        location.reload();
+
     }).catch((error) => {
         // An error happened.
     });
+
 }
