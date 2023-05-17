@@ -70,6 +70,7 @@
   font-weight: 700;
   width: 100%;
   text-transform: uppercase;
+  color: $darktheme-border-black;
 }
 
 .shoping-list__bind {
@@ -78,7 +79,7 @@
   font-size: 12px;
   line-height: 1.17;
   font-weight: 400;
-  color: $category-backgr-color-grey;
+  color: $category-autors-text;
 }
 
 .shoping-list__details {
@@ -93,6 +94,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.29;
+  color: $darktheme-border-black;
 }
 
 .shoping-list__author {
@@ -101,7 +103,7 @@
   font-size: 12px;
   line-height: 1.17;
   font-weight: 400;
-  color: $category-backgr-color-grey;
+  color: $category-autors-text;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
