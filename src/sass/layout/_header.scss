@@ -5,10 +5,10 @@ header {
   height: 72px;
   margin-left: auto;
   margin-right: auto;
+  background-color: $light-background;
   top: 0px;
   width: 100%;
   max-width: 1440px;
-  background: $light-background;
   border: 1.5px solid #111111;
   border-radius: 0px 0px 8px 8px;
 }
@@ -34,6 +34,7 @@ header {
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 // .header__logo {
 //   margin-right: 4px;
@@ -41,9 +42,17 @@ header {
 // .header__logo--icon {
 // }
 .logo__text {
-  margin-left: 8px;
+  margin: 0 0 0 8px;
+  padding: 0;
+  height: 14px;
 }
 
+.header__logo {
+  padding: 0;
+  margin: 0;
+  height: 24px;
+  width: 24px;
+}
 .form-switch {
   display: inline-block;
   cursor: pointer;
@@ -322,12 +331,20 @@ body.dark .modal-log {
   border: 2px solid #f6f6f6;
 }
 
-body.dark .modal-log input.inpt {
+body.dark .modal-log {
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+}
+body.dark input.inpt {
   border: 1px solid #f6f6f6;
   color: #f6f6f6;
 }
 
-body.dark .modal-log input.submit {
+body.dark .modal-log {
+  color: #202024;
+  background-color: #f6f6f6;
+}
+body.dark input.submit {
   color: #202024;
   background-color: #f6f6f6;
 }
@@ -337,12 +354,36 @@ body.dark .modal-log {
   border: 2px solid #f6f6f6;
 }
 
-body.dark .modal-log input.inpt {
+body.dark .modal-log {
+  border: 1px solid #f6f6f6;
+  color: #f6f6f6;
+}
+body.dark input.inpt {
   border: 1px solid #f6f6f6;
   color: #f6f6f6;
 }
 
-body.dark .modal-log input.submit {
+body.dark .modal-log {
   color: #202024;
   background-color: #f6f6f6;
+}
+body.dark input.submit {
+  color: #202024;
+  background-color: #f6f6f6;
+}
+
+body.dark .tab {
+  color: #f6f6f6;
+}
+body.dark .modal-log__button-close-icon {
+  background-color: #202024;
+}
+
+body.dark header {
+  background-color: #202024;
+  border: 1.5px solid #ffffff;
+}
+
+body.dark .logo__text {
+  color: #f3f3f3;
 }
