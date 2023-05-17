@@ -22,6 +22,7 @@ async function fetchCategories() {
     attachEventListeners();
   });
 }
+//функція для прокрутки, яка викликається на початку документу
 function scrolling() {
   insertingCategories.addEventListener('wheel', function (event) {
     event.preventDefault();

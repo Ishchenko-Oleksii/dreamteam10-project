@@ -1,3 +1,5 @@
-const { DiffieHellmanGroup } = require('crypto');
+// const { DiffieHellmanGroup } = require('crypto');
 
-DiffieHellmanGroup;
+// DiffieHellmanGroup;
+import { exporting } from "./js/home";
+console.log(exporting)

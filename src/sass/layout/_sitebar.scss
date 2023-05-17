@@ -75,6 +75,17 @@
     height: auto;
     margin-bottom: 20px;
   }
+  .aside-list {
+    width: 337px;
+    height: 472px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    overflow: auto;
+    margin-top: 40px;
+    margin-bottom: 86px;
+    border-radius: 15px;
+  }
 }
 @media only screen and (max-width: 480px) {
   .sidebar {
@@ -83,5 +94,31 @@
     width: 100%;
     height: auto;
     margin-bottom: 20px;
+    overflow: scroll;
   }
+  .aside-list {
+    width: 335px;
+    height: 228px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    overflow: auto;
+    margin-top: 40px;
+    margin-bottom: 86px;
+    border-radius: 15px;
+  }
+  .aside-list::-webkit-scrollbar {
+    width: 8px;
+    height: 114px;
+  }
+  
+  .aside-list::-webkit-scrollbar-thumb {
+    background: #E0E0E0;
+    border-radius: 12px;
+  }
+  
+  .aside-list::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
 }
