@@ -2,11 +2,11 @@
     <div class="container">
         <div class="wrapper">
             <a class="logo" href="./index.html">
-                <div class="header__logo">
+                <!-- <div class="header__logo"> -->
                     <svg class="header__logo--icon" width="24px" height="24px">
                         <use href="./images/icons.svg#icon-logo"></use>
                     </svg>
-                </div>
+                <!-- </div> -->
                 <svg class="logo__text" width="77px" height="14px">
                     <use href="./images/sprite.svg#icon-Bookshelf"></use>
                 </svg>
@@ -16,7 +16,19 @@
         <nav class="navigation">
             <ul class="navigation-list">
                 <li class="navigation-item"><a class="navigation-link" href="#">Home</a></li>
-                <li class="navigation-item"><a class="navigation-link" href="#">Shopping List</a></li>
+                <li class="navigation-item">
+                  
+                    <a class="navigation-link" href="#">
+                    <div class="navigation-link-thumb">
+                        <span>Shopping List</span>
+                        <svg class="navigation-link-icon" width="20" height="20">
+                            <use href="./images/icons.svg#icon-cart"></use>
+                        </svg>
+                    </div>
+                    </a>
+            
+                    
+                </li>
             </ul>
         </nav>
         <div class="container-switcher-btn">
@@ -28,8 +40,8 @@
             </div>
 
             <button type="button" class="open-menu-icon">
-                <svg width="28" height="28">
-                    <use href="./images/icons.svg#icon-align-left"></use>
+                <svg class="open-menu-icon-svg" width="28" height="28">
+                    <use href="./images/icons.svg#icon-menu-burger"></use>
                 </svg>
             </button>
             <button type="button" class="close-menu-icon is-hidden">
@@ -38,10 +50,13 @@
                 </svg>
             </button>
 
-            <button class="button_signup">Sign up
-                <svg width="20" height="20">
+            <button class="button_signup button_signup--header">
+                <div class="button_signup-thumb">
+                <span class="button_signup-text">Sign up</span>
+                <svg class="button_signup-icon" width="20" height="20">
                     <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
                 </svg>
+                </div>
             </button>
 
             <!-- <button class="button_user">
@@ -60,7 +75,7 @@
     <div class="authentication">
         <button class="js-signup-btn" type="button" value="" data-modal-open>Sign up</button>
 
-        <button class=" js-signout" type="button" value="">Log out</button>
+        <button class=" js-signout" type="button" value="">Log out</button> -->
         <!-- submit-out // it is class for this button-->
 
     </div>
