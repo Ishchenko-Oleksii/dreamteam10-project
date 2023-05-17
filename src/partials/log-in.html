@@ -1,52 +1,48 @@
-<section class="container__log-in">
+<section class=" backdrop-singup hidden" data-modal>
+    <!--container__log-in hidden -->
+    <div class="modal-log">
+        <button class="modal-log__button-close" data-modal-close>
+            <svg class="modal-log__button-close-icon">
+                <use href="./images/icons.svg#icon-x-close"></use>
+            </svg>
+        </button>
 
-    <div>
-        <div>
-            <!-- <input type="button" value="Sign up" class="submit-in js-signup-btn"> -->
-            <input class="js-signup-btn" type="button" value="Sign up" data-modal-open>
-        </div>
-
-        <div>
-            <input type="button" value="Log out" class="submit-out js-signout">
-        </div>
-    </div>
-
-    <article class="forms hidden" data-modal>
-
-        <div class="content">
-            <button class="modal__button-close" style=" width: 15px; height: 15px; background: red;" data-modal-close>
-                <!-- <svg class="modal__icon-close">
-                    <use href="./images/icons.svg#close"></use>
-                </svg> -->
-            </button>
+        <div class="forms">
             <div class="signup-cont cont">
-                <form action="submit" method="post" enctype="multipart/form-data" class="js-form-signup">
-                    <input type="name" name="name" id="name" class="inpt" required="required" placeholder="NAME">
-                    <label for="name">name</label>
-                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="email">
-                    <label for="email">email</label>
-                    <input type="password" name="password" id="password" class="inpt" required="required"
-                        placeholder="password">
-                    <label for="password">password</label>
+                <form action="submit" method="post" enctype="multipart/form-data"
+                    class="signup-cont__form js-form-signup">
+                    <div class="form-fields">
+                        <input type="name" name="name" id="name" class="inpt" required="required" placeholder="NAME">
+                        <label for="name">name</label>
+                        <input type="email" name="email" id="email" class="inpt" required="required"
+                            placeholder="email">
+                        <label for="email">email</label>
+                        <input type="password" name="password" id="password" class="inpt" required="required"
+                            placeholder="password">
+                        <label for="password">password</label>
+                    </div>
                     <div class="submit-wrap">
                         <input type="submit" value="Sign up" class="submit">
                     </div>
                 </form>
             </div>
-
             <div class="signin-cont cont hidden">
-                <form action="submit" method="post" enctype="multipart/form-data" class="js-form-signin">
-                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="email">
-                    <label for="email">email</label>
-                    <input type="password" name="password" id="password" class="inpt" required="required"
-                        placeholder="password">
-                    <label for="password">password</label>
+                <form action="submit" method="post" enctype="multipart/form-data"
+                    class="signup-cont__form js-form-signin">
+                    <div class="form-fields">
+                        <input type="email" name="email" id="email" class="inpt" required="required"
+                            placeholder="email">
+                        <label for="email">email</label>
+                        <input type="password" name="password" id="password" class="inpt" required="required"
+                            placeholder="password">
+                        <label for="password">password</label>
+                    </div>
+
                     <div class="submit-wrap">
                         <input type="submit" value="Sign in" class="submit">
                     </div>
                 </form>
             </div>
-
             <div class="tabs">
                 <div class="tab signup js-tab active">
                     <!-- <a href="#signup"> -->
@@ -59,6 +55,6 @@
                     <!-- </a> -->
                 </div>
             </div>
-
-    </article>
+        </div>
+        </article>
 </section>
