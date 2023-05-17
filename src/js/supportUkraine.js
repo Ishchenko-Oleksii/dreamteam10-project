@@ -87,7 +87,7 @@ function addFondToList({ title, url, img, img2x }, index) {
   const number = index + 1;
   fondsList.insertAdjacentHTML(
     `beforeend`,
-    `<li class="support__item slider__slide swiper-slide"><a href="${url}" class="support__link slider__link"><span class="support__number">${String(
+    `<li class="support__item slider__slide swiper-slide"><a href="${url}" target="_blank" class="support__link slider__link"><span class="support__number">${String(
       number
     ).padStart(2, `0`)}</span><picture>
         <source

@@ -1,8 +1,8 @@
 import API from './fetchById';
-import imageAmazon from '../images/amazon.svg';
+
 import imageBookShop from '../images/bookshop.svg';
 import imageIBooks from '../images/ibooks.svg';
-//import svgAmazon from '../images/amazon.svg#svg1936';
+import sprite from '../images/amazon.svg';
 
 const refs={
     div: document.querySelector('.bookShell'),
@@ -111,7 +111,9 @@ function createMarkupBookModal(arrayInfoBook){
     <p class="book-description">${description}</p>
     <div class="book-links">
     <a class="book-buy-url" href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener">
-    <img class="book-buy-icon"src="${imageAmazon}" width="62px" height="19px"/>
+    <svg class="book-buy-icon" width="62" height="19">
+    <use href="${sprite}#svg1936"></use>
+    </svg>
     </a>
     <a class="book-buy-url" href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener">
     <img src="${imageIBooks}" width="33px" height="32px"/>
@@ -122,10 +124,6 @@ function createMarkupBookModal(arrayInfoBook){
     </div>
     </div>`;
     
-    // <svg width="62" height="19">
-    // <use href="${svgAmazon}"></use>
-    //</svg>
-
     refs.bookCard.innerHTML=markup;
 }
 
