@@ -1,6 +1,7 @@
 .shoping-list {
   padding-left: 20px;
   padding-right: 20px;
+  width: 100%;
 }
 
 .shoping-list__title {
@@ -13,7 +14,7 @@
   color: $darktheme-border-black;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .shoping-list__title {
     font-size: 48px;
     margin-bottom: 140px;
@@ -24,7 +25,7 @@
   color: #4f2ee8;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .shoping-list__title-span {
     font-size: 48px;
   }
@@ -38,14 +39,14 @@
   height: 177px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: $mobile) {
   .shoping-list__card {
     padding: 14px;
     margin-bottom: 20px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .shoping-list__card {
     height: 213px;
     padding: 24px;
@@ -169,15 +170,33 @@
   margin-top: 120px;
 }
 
-@media screen and (min-width: 375px) {
+@media screen and (min-width: $mobile) {
   .shoping-list__empty-page {
     width: 265px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: $tablet) {
   .shoping-list__empty-page {
     width: 349px;
     margin-top: 140px;
+    font-size: 18px;
+  }
+}
+
+.shoping-list__empty-text {
+  margin-bottom: 14px;
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 14px;
+  line-height: 1.29;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 400;
+}
+
+@media screen and (min-width: $tablet) {
+  .shoping-list__empty-text {
+    font-size: 18px;
+    margin-bottom: 20px;
   }
 }
