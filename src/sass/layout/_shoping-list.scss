@@ -99,6 +99,8 @@
 }
 
 .shoping-list__author {
+  display: flex;
+  align-items: center;
   margin-top: 0px;
   margin-bottom: 0px;
   font-size: 12px;
@@ -152,6 +154,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: nowrap;
+  align-items: center;
 }
 
 .shoping-list__svg-container {
@@ -199,4 +202,19 @@
     font-size: 18px;
     margin-bottom: 20px;
   }
+}
+
+.shoping-list__svg-link:hover,
+.shoping-list__svg-link:focus {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.button_trash-svg {
+  background-color: $darktheme-border-black;
+  border-radius: 50%;
+}
+
+.button_trash-svg:hover,
+.button_trash-svg:focus {
+  background-color: $button-background;
 }

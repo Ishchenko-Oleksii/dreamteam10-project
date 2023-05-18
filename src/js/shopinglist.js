@@ -1,11 +1,11 @@
 const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
-import imageAmazon from '../images/amazon.svg';
+import imageAmazon from '../images/amazone1.svg';
 import imageBookShop from '../images/bookshop.svg';
-import imageIBooks from '../images/ibooks.svg';
-import deleteButton from '../images/sprite.svg#icon-trash';
-import EmptyPicture from '../images/emptyshopinglist.jpg';
+import imageiBooks from '../images/ibooks.svg';
+import deleteButton from '../images/dump.svg';
+console.log(deleteButton);
 
-console.log(books);
+import EmptyPicture from '../images/emptyshopinglist.jpg';
 
 function deleteBook(bookId) {
   const index = books.findIndex(book => book.bookId === bookId);
@@ -36,12 +36,12 @@ function createMarkup(books) {
         bookDescription,
         bookCategory,
         bookAmazon,
-        bookBookShop,
+        bookShop,
         bookOpenBook,
       }) => {
         const linksHtml = [];
 
-        [bookAmazon, bookBookShop, bookOpenBook].forEach(buyLink => {
+        [bookAmazon, bookShop, bookOpenBook].forEach(buyLink => {
           if (buyLink) {
             let iconWidth, iconHeight, iconHref;
 
@@ -52,8 +52,8 @@ function createMarkup(books) {
             } else if (buyLink === bookOpenBook) {
               iconWidth = '16px';
               iconHeight = '16px';
-              iconHref = imageIBooks;
-            } else if (buyLink === bookBookShop) {
+              iconHref = imageiBooks;
+            } else if (buyLink === bookShop) {
               iconWidth = '16px';
               iconHeight = '16px';
               iconHref = imageBookShop;
@@ -61,10 +61,8 @@ function createMarkup(books) {
 
             linksHtml.push(`
               <li>
-                <a href="${buyLink}">
-                  <svg width="${iconWidth}" height="${iconHeight}" class="shoping-list-icon">
-                    <use href="${iconHref}"></use>
-                  </svg>
+                <a class="shoping-list__svg-link" href="${buyLink}">
+                <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
                 </a>
               </li>
             `);
@@ -81,9 +79,7 @@ function createMarkup(books) {
                   <p class="shoping-list__bind">${bookCategory}</p>
                 </div>
                 <button class="button_trash" data-book-id="${bookId}">
-                  <svg width="18" height="18" class="icon_trash">
-                    <use href=${deleteButton}></use>
-                  </svg>
+                    <img class="button_trash-svg" src="${deleteButton}"/>
                 </button>
               </div>
               <p class="shoping-list__details">${bookDescription}</p>
@@ -107,7 +103,6 @@ function renderBooks() {
 
   booksContainer.innerHTML = createMarkup(books);
 
-  // Добавляем обработчики события для кнопок удаления книги
   const deleteButtons = document.getElementsByClassName('button_trash');
   Array.from(deleteButtons).forEach(button => {
     const bookId = button.dataset.bookId;
