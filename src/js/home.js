@@ -245,4 +245,4 @@ document.addEventListener('DOMContentLoaded', async () => {
  
 
 }
-export {setHome}
+export{fetchCategoryBooks, clearBookShell, updateBooksPerCategory, createBookElement};
