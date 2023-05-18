@@ -11,6 +11,7 @@
     $light-background 100%
   );
   box-shadow: 0px 10px 10px rgba(245, 245, 247, 0.1);
+  transition: height 0.3s ease;
   @media screen and (min-width: $desktop) {
     width: 356px;
   }
@@ -79,6 +80,9 @@
         height: 22px;
       }
     }
+    &--up {
+  transform: rotate(180deg);
+}
   }
   &__list {
     @media screen and (min-width: $tablet) {
@@ -122,11 +126,6 @@
 
   &__img {
     filter: brightness(0) invert(1);
-  }
-}
-
-.support--tablet {
-  @media screen and (min-width: $tablet) {
-    height: auto;
+    max-height: 32px;
   }
 }
