@@ -1,10 +1,6 @@
 .sidebar {
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  //width: 404px;
   height: 100%;
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   box-sizing: border-box;
   z-index: 2;
   @media screen and (min-width: $tablet) {
@@ -16,7 +12,7 @@
 }
 
 .selected-category {
-  color: #4f2ee8;
+  color: $button-background;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 16px;
@@ -36,10 +32,6 @@
   }
 }
 
-.selected-category {
-  color: #4f2ee8;
-}
-
 .aside-list-button {
   color: rgba(17, 17, 17, 0.6);
   background-color: transparent;
@@ -50,11 +42,10 @@
   line-height: 1.125;
   letter-spacing: -0.02em;
 
-  color: rgba(17, 17, 17, 0.6);
-
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 18px;
     line-height: 1.333px;
+    letter-spacing: -1px;
   }
 }
 
@@ -69,58 +60,11 @@
   height: 256px;
   border-radius: 8px;
 }
-.book-title {
-  cursor: default;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: #111;
-  text-align: start;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  font-family: DM Sans, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.12;
-}
 
 .insertedByCategoryBooks {
   width: 180px;
   height: 256px;
   border-radius: 8px;
-}
-
-.book-title {
-  cursor: default;
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  color: #111;
-  text-align: start;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  font-family: DM Sans, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
-  box-sizing: border-box;
-}
-.book-author {
-  cursor: default;
-  letter-spacing: -0.04em;
-  text-align: start;
-  color: #b4afaf;
-  padding-bottom: 8px;
-  font-family: DM Sans, sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.16;
-}
-
-.selected-category {
-  color: #4f2ee8;
 }
 
 .aside-list {
@@ -137,7 +81,6 @@
   }
 }
 
-/* Стилізація прокрутки */
 .aside-list::-webkit-scrollbar {
   width: 8px;
   height: 167px;
@@ -152,13 +95,12 @@
   background-color: transparent;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $tablet) {
   .sidebar {
     display: block;
     position: relative;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
   }
 }
 
