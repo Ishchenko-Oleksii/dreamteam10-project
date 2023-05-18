@@ -61,7 +61,7 @@ function createMarkup(books) {
 
             linksHtml.push(`
               <li>
-                <a class="shoping-list__svg-link" href="${buyLink}">
+                <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
                 <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
                 </a>
               </li>
