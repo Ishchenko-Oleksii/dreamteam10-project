@@ -489,3 +489,43 @@ body.dark .open-menu-icon {
   background-color: #202024;
   color: #ffffff;
 }
+
+body.dark .modal-log  {
+  background-color: #202024;
+  border: 2px solid #f6f6f6;
+}
+
+body.dark .modal-log input.inpt::placeholder {
+  color: #f6f6f6;
+}
+
+body.dark .modal-log__button-close {
+  fill: #f6f6f6;
+}
+body.dark .modal-log__button-close-icon  {
+  fill: #f6f6f6;
+}
+
+body.dark .modal-log input.inpt  {
+  bborder: 2px solid #f6f6f6;
+}
+
+body.dark .modal-log__button {
+  fill: #f6f6f6;
+}
+
+body.dark .tab {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+body.dark .modal-log input.submit  {
+  background-color: #f6f6f6;
+}
+
+body.dark .modal-log input.submit:hover  {
+  background-color: #202024;
+}
+
+body.dark .modal-log input.submit:hover  {
+  background-color: #202024;
+}
