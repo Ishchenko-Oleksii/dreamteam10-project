@@ -298,13 +298,13 @@ body.js-show-modal .modal {
 
 //темная тема для модалки
 body.dark.js-show-modal .modal{
-  background-color: $darktheme-border-black;
+  background-color: $background-dark;
   border: 2px solid $light-background;
   color: $light-background;
 }
 
 body.dark.js-show-modal .modal__button-close{
-  background-color: $darktheme-border-black;
+  background-color: $background-dark;
   color: $light-background;
 
 }
@@ -315,7 +315,7 @@ body.dark.js-show-modal .modal__button-close:focus{
 }
 
 body.dark.js-show-modal .modal__button-shopping-list{
-  background-color: $darktheme-border-black;
+  background-color: $background-dark;
   color: $light-background;
 }
 
