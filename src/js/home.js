@@ -119,7 +119,7 @@ function createBookCard(category) {
 
 function updateBooksPerCategory() {
   const width = window.innerWidth;
-  const booksPerCategory = width < 768 ? 1 : width < 1439 ? 3 : 5;
+  const booksPerCategory = width < 768 ? 1 : width < 1440 ? 3 : 5;
   const categories = document.querySelectorAll('.book__body ul');
   categories.forEach(category => {
     const books = category.querySelectorAll('li');
