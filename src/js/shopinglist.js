@@ -3,9 +3,8 @@ import imageAmazon from '../images/amazone1.svg';
 import imageBookShop from '../images/bookshop.svg';
 import imageiBooks from '../images/ibooks.svg';
 import deleteButton from '../images/dump.svg';
-console.log(deleteButton);
 
-import EmptyPicture from '../images/emptyshopinglist.jpg';
+import EmptyPicture from '../images/emptyshopinglist.svg';
 
 function deleteBook(bookId) {
   const index = books.findIndex(book => book.bookId === bookId);
@@ -61,7 +60,7 @@ function createMarkup(books) {
 
             linksHtml.push(`
               <li>
-                <a class="shoping-list__svg-link" href="${buyLink}">
+                <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
                 <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
                 </a>
               </li>
