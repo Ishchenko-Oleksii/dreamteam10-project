@@ -1,5 +1,6 @@
 import axios from 'axios';
-
+import { setHome } from './home';
+import { event } from 'jquery';
 const scrollbar = document.querySelector('.scrollbar');
 const insertingCategories = document.querySelector('.aside-list');
 scrolling();
@@ -14,10 +15,13 @@ async function fetchCategories() {
 
     insertingCategories.insertAdjacentHTML(
       'afterbegin',
-      `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button selected-category">All categories</button></li>`
+      `<li class="category-aside-list"><button type="button" id="button${buttonId}" class="aside-list-button selected-category">All categories</button></li>`
     );
-
-    for (let i = 0; i < response.data.length; i++) {
+    document.getElementById('button1').addEventListener('click', (event) => {
+      location.reload();
+    });
+    
+   for (let i = 0; i < response.data.length; i++) {
       buttonId += 1;
 
       insertingCategories.insertAdjacentHTML(
@@ -43,30 +47,25 @@ let encodedString = '';
 
 function attachEventListeners() {
   const buttons = document.querySelectorAll('.aside-list-button');
-
   buttons.forEach(button => {
     button.addEventListener('click', function () {
       buttons.forEach(btn => {
         btn.classList.remove('selected-category');
       });
-
       selectedCategory = this.textContent;
       this.classList.add('selected-category');
       encodedString = encodeURIComponent(selectedCategory);
-      if(selectedCategory!='All categories'){
+
+      if(selectedCategory==='All categories'){
       document.querySelector('.export-all').innerHTML = '';
       }
       getElementsByCategory();
     });
   });
 }
-import { setHome } from './home';
 function getElementsByCategory() {
   document.querySelector('.export-all').innerHTML = '';
   axios.get(`https://books-backend.p.goit.global/books/category?category=${encodedString}`).then((res) => {
-    if(selectedCategory==='All categories'){
-      setHome();
-    }else if(selectedCategory!='All categories'){
     const books = res.data;
     books.forEach((book) => {
       const bookImage = book.book_image;
@@ -98,6 +97,5 @@ function getElementsByCategory() {
       bookContainer.appendChild(authorElement);
       document.querySelector('.export-all').appendChild(bookContainer);
     });
-  }
   });
 }
