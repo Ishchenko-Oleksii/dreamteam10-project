@@ -9,6 +9,9 @@
   background: radial-gradient(circle farthest-corner at -846px -919px,
       rgba(204, 236, 231),
       #4f2ee8);
+  background: radial-gradient(circle farthest-corner at -846px -919px,
+      rgba(204, 236, 231),
+      #4f2ee8);
   // filter: blur(539.791px);
   transition: opacity 250ms linear, visibility 250ms linear,
     transform 250ms linear;
@@ -176,6 +179,7 @@
   padding-right: 0;
   padding-bottom: 0;
   // border-bottom: 1px solid #263238;
+  color: #4f2ee8;
   color: #4f2ee8;
   text-decoration-line: underline;
 }

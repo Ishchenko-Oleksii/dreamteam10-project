@@ -7,19 +7,27 @@ async function fetchBooks() {
     const response = await axios.get(url);
     const data = response.data;
     const bookShell = document.querySelector('.bookShell');
-    data.forEach(book => {
-      const card = createBookCard(book);
-      if (card) {
-        bookShell.appendChild(card);
-      }
-      if (data.length === 0) {
-        const bookShell = document.querySelector('.bookShell');
-        const noBooksMsg = document.createElement('div');
-        noBooksMsg.textContent = 'No books found';
-        noBooksMsg.style.textAlign = 'center';
-        bookShell.appendChild(noBooksMsg);
+    const loadedCategories = []; 
+    const cardsToCreate = data.slice(0, 4);
+
+    cardsToCreate.forEach((book) => {
+      if (!loadedCategories.includes(book.list_name)) {
+        const card = createBookCard(book);
+        if (card) {
+          bookShell.appendChild(card);
+          loadedCategories.push(book.list_name); 
+        }
       }
     });
+
+    if (data.length === 0) {
+      const bookShell = document.querySelector('.bookShell');
+      const noBooksMsg = document.createElement('div');
+      noBooksMsg.textContent = 'No books found';
+      noBooksMsg.style.textAlign = 'center';
+      bookShell.appendChild(noBooksMsg);
+    }
+
     return data;
   } catch (error) {
     console.error(error);
@@ -47,9 +55,6 @@ function createBookCard(category) {
     books.slice(0, 5).forEach(book => {
       const bookItem = document.createElement('li');
       bookItem.className = 'book__item';
-      bookItem.addEventListener('click', () => {
-        console.log(`Book ${book.title} clicked`);
-      });
 
       const bookImageContainer = document.createElement('div');
       bookImageContainer.classList.add('book-image-container');
@@ -114,7 +119,7 @@ function createBookCard(category) {
 
 function updateBooksPerCategory() {
   const width = window.innerWidth;
-  const booksPerCategory = width < 480 ? 1 : width < 780 ? 3 : 5;
+  const booksPerCategory = width < 768 ? 1 : width < 1439 ? 3 : 5;
   const categories = document.querySelectorAll('.book__body ul');
   categories.forEach(category => {
     const books = category.querySelectorAll('li');
@@ -178,7 +183,6 @@ function createBookElement(book_image, title, author, _id) {
   const bookItem = document.createElement('div');
   bookItem.className = 'book';
   bookItem.addEventListener('click', () => {
-    console.log(`Book ${title} clicked, ID: ${_id}`);
   });
 
   const bookImageContainer = document.createElement('div');
