@@ -1,27 +1,40 @@
 import axios from 'axios';
+import { fetchCategoryBooks, clearBookShell, updateBooksPerCategory, createBookElement } from './home.js';
 const scrollbar = document.querySelector('.scrollbar');
 const insertingCategories = document.querySelector('.aside-list');
+
 scrolling();
 fetchCategories();
+
+let selectedCategory = 'All categories'; 
+
 async function fetchCategories() {
   const apiCategories = 'https://books-backend.p.goit.global/books/category-list';
-  await axios.get(apiCategories).then(response => {
-    console.log(response.data);
+
+  try {
+    const response = await axios.get(apiCategories);
+    const categoriesData = response.data;
+
     let buttonId = 1;
     insertingCategories.insertAdjacentHTML(
       'afterbegin',
       `<li class="category-aside-list"><button type="button" id="${buttonId}" class="aside-list-button selected-category">All categories</button></li>`
     );
-    for (let i = 0; i < response.data.length; i++) {
+
+    for (let i = 0; i < categoriesData.length; i++) {
       buttonId += 1;
       insertingCategories.insertAdjacentHTML(
         'beforeend',
-        `<li class="category-aside-list"><button type="button" id="btnAsideListId${buttonId}" class="aside-list-button">${response.data[i].list_name}</button></li>`
+        `<li class="category-aside-list"><button type="button" id="btnAsideListId${buttonId}" class="aside-list-button">${categoriesData[i].list_name}</button></li>`
       );
     }
-    attachEventListeners();
-  });
+
+    attachEventListeners(); 
+  } catch (error) {
+    console.error(error);
+  }
 }
+
 function scrolling() {
   insertingCategories.addEventListener('wheel', function (event) {
     event.preventDefault();
@@ -29,7 +42,7 @@ function scrolling() {
     insertingCategories.scrollTop += delta;
   });
 }
-let selectedCategory = 'All categories';
+
 function attachEventListeners() {
   const buttons = document.querySelectorAll('.aside-list-button');
   buttons.forEach(button => {
@@ -39,8 +52,31 @@ function attachEventListeners() {
       });
       selectedCategory = this.textContent;
       this.classList.add('selected-category');
-      console.log(selectedCategory);
+
+      if (selectedCategory === 'All categories') {
+        window.location.href = 'index.html';
+      } else {
+        fetchCategoryBooks(selectedCategory)
+          .then((books) => {
+            clearBookShell();
+            updateBooksPerCategory();
+            books.forEach(book => {
+              const { book_image, title, author, _id } = book;
+              const bookElement = createBookElement(book_image, title, author, _id);
+              if (bookElement) {
+                document.querySelector('.bookShell').appendChild(bookElement);
+              }
+            });
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
     });
   });
 }
-export {selectedCategory, attachEventListeners};
+
+
+
+
+export { selectedCategory, attachEventListeners };
