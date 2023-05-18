@@ -19,34 +19,36 @@
 }
 
 .modal-log {
-  max-width: 579px;
-  // width: 579px;
-  height: 516px;
-  padding: 80px 40px 40px 40px;
-  box-sizing: border-box;
-  background-color: #f6f6f6;
-  border: 2px solid #111111;
-  border-radius: 18px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    max-width: 579px;
+    // width: 579px;
+    height: 516px;
+    padding: 80px 40px 40px 40px;
+    box-sizing: border-box;
+    background-color: #F6F6F6;
+    border: 2px solid #111111;
+    border-radius: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
 
-  // &>.modal-log__button-close-icon {
-  //   // background-color: #F6F6F6;
-  //   background-color: red;
-  // }
+    // &>.modal-log__button-close-icon {
+    //   // background-color: #F6F6F6;
+    //   background-color: red;
+    // }
 
-  // &.modal-log__button-close-icon {
-  //   // background-color: #F6F6F6;
-  //   background-color: red;
-  // }
+    // &.modal-log__button-close-icon {
+    //   // background-color: #F6F6F6;
+    //   background-color: red;
+    // }
 
-  @media screen and (max-width: $mobile) {
-    max-width: 355px;
-    height: 384px;
-    padding: 40px 20px 40px 20px;
-  }
+    @media screen and (max-width: $mobile) {
+        max-width: 355px;
+        height: 384px;
+        padding: 40px 20px 40px 20px;
+    }
+
 }
 
 .modal-log__button-close {
