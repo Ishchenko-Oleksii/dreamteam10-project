@@ -7,11 +7,12 @@
   padding: 40px 20px;
   box-sizing: border-box;
   z-index: 2;
-}
-
-.aside-list-button {
-  color: rgba(17, 17, 17, 0.6);
-  background-color: transparent;
+  @media screen and (min-width: $tablet) {
+    display:flex;
+  }
+  @media screen and (min-width: $desktop) {
+    display:block;
+  }
 }
 
 .selected-category {
@@ -26,16 +27,14 @@
   color: rgba(17, 17, 17, 0.6);
   background-color: transparent;
   display:block;
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: $tablet) {
     display:flex;
-    padding: 40px 32px;
+    gap: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
-  @media screen and (min-width: 1440px) {
-    display:block;
-    padding-left: 24px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-  }
+ 
 }
 
 .selected-category {
@@ -140,16 +139,16 @@ line-height: 18px;
 
 .aside-list {
   width: 356px;
-  height: 472px;
+  height: 237px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
   overflow: auto;
-  //margin-top: 40px;
+
 
   border-radius: 15px;
-  @media screen and (min-width: 768px) {
-    row-gap: 32px;
+  @media screen and (min-width: $tablet) {
+    height: 472px;
   }
 
 }
