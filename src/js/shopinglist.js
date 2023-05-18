@@ -1,8 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const asideList = document.querySelector('.aside-list');
+  asideList.classList.add('shoping-list__aside-list');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  sidebar.classList.add('shoping-list__sidebar');
+});
+
 const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
-import imageAmazon from '../images/amazone1.svg';
+// import imageAmazon from '../images/amazone1.svg';
+// import imageBookShop from '../images/bookshop.svg';
+// import imageiBooks from '../images/ibooks.svg';
+import deleteButton from '../images/dump.svg';
+
 import imageBookShop from '../images/bookshop.svg';
 import imageiBooks from '../images/ibooks.svg';
-import deleteButton from '../images/dump.svg';
+import imageAmazon from '../images/amazone4.svg';
 
 import EmptyPicture from '../images/emptyshopinglist.svg';
 
@@ -42,31 +56,56 @@ function createMarkup(books) {
 
         [bookAmazon, bookShop, bookOpenBook].forEach(buyLink => {
           if (buyLink) {
-            let iconWidth, iconHeight, iconHref;
+            let iconHref, iconClass;
 
             if (buyLink === bookAmazon) {
-              iconWidth = '32px';
-              iconHeight = '11px';
               iconHref = imageAmazon;
+              iconClass = 'shoping-list__amazon-icon';
             } else if (buyLink === bookOpenBook) {
-              iconWidth = '16px';
-              iconHeight = '16px';
               iconHref = imageiBooks;
+              iconClass = 'shoping-list__open-book-icon';
             } else if (buyLink === bookShop) {
-              iconWidth = '16px';
-              iconHeight = '16px';
               iconHref = imageBookShop;
+              iconClass = 'shoping-list__shop-icon';
             }
 
             linksHtml.push(`
-              <li>
-                <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
-                <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
-                </a>
-              </li>
-            `);
+      <li>
+        <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
+          <img src="${iconHref}" class="${iconClass}"/>
+        </a>
+      </li>
+    `);
           }
         });
+
+        // [bookAmazon, bookShop, bookOpenBook].forEach(buyLink => {
+        //   if (buyLink) {
+        //     let iconWidth, iconHeight, iconHref;
+
+        //     if (buyLink === bookAmazon) {
+        //       iconWidth = '32px';
+        //       iconHeight = '11px';
+        //       iconHref = imageAmazon;
+        //     } else if (buyLink === bookOpenBook) {
+        //       iconWidth = '16px';
+        //       iconHeight = '16px';
+        //       iconHref = imageiBooks;
+        //     } else if (buyLink === bookShop) {
+        //       iconWidth = '16px';
+        //       iconHeight = '16px';
+        //       iconHref = imageBookShop;
+        //     }
+
+        //     linksHtml.push(`
+        //       <li>
+        //         <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
+        //         <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
+        //         </a>
+        //       </li>
+        //     `);
+        //   }
+        // });
 
         return `
           <div class="shoping-list__card">
