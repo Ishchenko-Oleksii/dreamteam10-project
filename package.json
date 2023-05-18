@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "codeframe": "^0.0.1",
     "firebase": "^9.22.0",
     "infinite-scroll": "^4.0.1",
     "infinitescroll": "^0.1.9",

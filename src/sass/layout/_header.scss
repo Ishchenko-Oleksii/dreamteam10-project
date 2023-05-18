@@ -14,6 +14,7 @@ header {
 }
 
 .container {
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,18 +45,16 @@ header {
 }
 
 .wrapper {
-  display: flex;
+  // display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px; //12px
-
-  @media screen and (min-width: 768px) {
-    margin-top: 16px;
-  }
+  padding-top: 12px;
 }
+
 .theme-switcher {
   //margin-right: 24px;
   margin-top: 18px;
+
   @media screen and (min-width: 768px) {
     margin-top: 22px;
   }
@@ -66,6 +65,7 @@ header {
   align-items: center;
   justify-content: center;
 }
+
 // .header__logo {
 //   margin-right: 4px;
 // }
@@ -136,7 +136,7 @@ header {
   transform: translate3d(2px, 2px, 0);
 }
 
-.form-switch:active input:checked + i::after {
+.form-switch:active input:checked+i::after {
   transform: translate3d(16px, 2px, 0);
 }
 
@@ -144,29 +144,60 @@ header {
   display: none;
 }
 
-.form-switch input:checked + i {
+.form-switch input:checked+i {
   background: linear-gradient(180deg, #4f2ee8 0%, #686868 100%);
 }
 
-.form-switch input:checked + i::before {
+.form-switch input:checked+i::before {
   transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
 }
 
-.form-switch input:checked + i::after {
+.form-switch input:checked+i::after {
   transform: translate3d(22px, 2px, 0);
+}
+
+@media (max-width: 767px) {
+  .container {
+    position: absolute;
+    width: 375px;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 100%;
+    height: 72px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    width: 100%;
+    height: 72px;
+  }
 }
 
 .navigation {
   display: none;
+
   @media screen and (min-width: 1440px) {
     margin-left: 76px;
   }
 }
+
 @media screen and (min-width: 768px) {
   .navigation {
     display: block;
     margin-left: 40px;
     margin-top: 17px;
+
     &-list {
       display: flex;
       gap: 24px;
@@ -197,6 +228,7 @@ header {
   gap: 4px;
   align-items: center;
 }
+
 .navigation-link {
   font-family: $main-font;
   font-style: normal;
@@ -220,6 +252,7 @@ header {
 
 .navigation-burger {
   margin-top: 183px;
+
   &-list {
     display: flex;
     flex-direction: column;
@@ -227,6 +260,7 @@ header {
     align-items: flex-start;
     gap: 9px;
   }
+
   &-item {
     color: $light-background;
   }
@@ -240,6 +274,7 @@ header {
   flex-wrap: nowrap;
   gap: 14px;
 }
+
 @media screen and (min-width: 768px) {
   .container-switcher-btn {
     gap: 24px;
@@ -248,6 +283,7 @@ header {
 
 .button_signup--header {
   display: none;
+
   @media screen and (min-width: 768px) {
     display: block;
     margin-top: 12px;
@@ -272,6 +308,7 @@ header {
   left: 20px;
   top: 20px;
 }
+
 .user-name {
   font-family: $main-font;
   font-style: normal;
@@ -296,16 +333,24 @@ header {
 .open-menu-icon-svg {
   fill: currentColor;
 }
+
 .open-menu-icon:hover,
 .open-menu-icon:focus {
   color: $hover-yellow;
 }
 
 @media screen and (min-width: 768px) {
+
   .open-menu-icon,
   .close-menu-icon {
     display: none;
   }
+}
+
+.burger-menu {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
 }
 
 @media screen and (min-width: 768px) {
@@ -317,18 +362,16 @@ header {
 .burger-conteiner {
   position: fixed;
   z-index: 3;
-  top: 64px;
+  top: 72px;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(
-      183.6% 183.01% at 59.76% -23.42%,
+  background-image: url(../images/Bakground_of_books.png),
+    radial-gradient(183.6% 183.01% at 59.76% -23.42%,
       $button-background 18.03%,
-      $light-background 100%
-    ),
-    url(../images/Bakground_of_books.png);
+      $light-background 100%);
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
+  background-size: contain;
 }
 
 .is-hidden {
@@ -353,13 +396,16 @@ body.dark .toggle {
 body.dark .bookShell__title {
   color: yellow;
 }
+
 body.dark .book__title {
   color: $light-background;
 }
+
 body.dark .book__button {
   background-color: $background-dark;
   color: $light-background;
 }
+
 body.dark .book__button:hover {
   background-color: $button-background;
   color: $light-background;
@@ -387,20 +433,12 @@ body.dark .modal-log {
   border: 2px solid #f6f6f6;
 }
 
-body.dark .modal-log {
-  border: 1px solid #f6f6f6;
-  color: #f6f6f6;
-}
-body.dark input.inpt {
+body.dark .modal-log input.inpt {
   border: 1px solid #f6f6f6;
   color: #f6f6f6;
 }
 
-body.dark .modal-log {
-  color: #202024;
-  background-color: #f6f6f6;
-}
-body.dark input.submit {
+body.dark .modal-log input.submit {
   color: #202024;
   background-color: #f6f6f6;
 }
@@ -410,20 +448,12 @@ body.dark .modal-log {
   border: 2px solid #f6f6f6;
 }
 
-body.dark .modal-log {
-  border: 1px solid #f6f6f6;
-  color: #f6f6f6;
-}
-body.dark input.inpt {
+body.dark .modal-log input.inpt {
   border: 1px solid #f6f6f6;
   color: #f6f6f6;
 }
 
-body.dark .modal-log {
-  color: #202024;
-  background-color: #f6f6f6;
-}
-body.dark input.submit {
+body.dark .modal-log input.submit {
   color: #202024;
   background-color: #f6f6f6;
 }
@@ -431,6 +461,7 @@ body.dark input.submit {
 body.dark .tab {
   color: #f6f6f6;
 }
+
 body.dark .modal-log__button-close-icon {
   background-color: #202024;
 }
@@ -466,4 +497,8 @@ body.dark .shoping-list__card {
 
 body.dark .shoping-list__details {
   color: #ffffff;
+}
+
+body.dark .logo__text {
+  fill: #f3f3f3;
 }
