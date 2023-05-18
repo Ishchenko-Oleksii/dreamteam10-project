@@ -1,5 +1,5 @@
 const openMenuBtn = document.querySelector('.open-menu-icon');
-const closeMenuBtn = document.querySelector(".close-menu-icon");
+const closeMenuBtn = document.querySelector('.close-menu-icon');
 const burgerMenu = document.querySelector('.burger-menu');
 
 const customerLoggedIn = `<div class="burger-conteiner">
@@ -12,9 +12,9 @@ const customerLoggedIn = `<div class="burger-conteiner">
 
   <nav class="navigation-burger">
     <ul class="navigation-burger-list">
-      <li class="navigation-item navigation-burger-item"><a class="navigation-link" href="#">Home</a></li>
+      <li class="navigation-item navigation-burger-item"><a class="navigation-link" href="./index.html">Home</a></li>
       <li class="navigation-item navigation-burger-item">
-        <a class="navigation-link" href="#">Shopping List
+        <a class="navigation-link" href="/src/shoping-list.html">Shopping List
           <svg width="20" height="20">
             <use href="./images/icons.svg#icon-lock"></use>
           </svg>
@@ -42,23 +42,22 @@ openMenuBtn.addEventListener('click', openMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
 
 function openMenu() {
-  burgerMenu.classList.remove("is-hidden");
-  openMenuBtn.classList.add("is-hidden");
-  closeMenuBtn.classList.remove("is-hidden");
+  burgerMenu.classList.remove('is-hidden');
+  openMenuBtn.classList.add('is-hidden');
+  closeMenuBtn.classList.remove('is-hidden');
 
   // if (localStorage.getItem(IS_CUSTOMER_LOGGED_IN)) {
-    burgerMenu.innerHTML = customerLoggedIn;
+  burgerMenu.innerHTML = customerLoggedIn;
   //} else{
   //     burgerMenu.innerHTML = customerNouLoggedIn;
   // }
 }
 
 function closeMenu() {
-  burgerMenu.classList.add("is-hidden");
-  openMenuBtn.classList.remove("is-hidden");
-  closeMenuBtn.classList.add("is-hidden");
+  burgerMenu.classList.add('is-hidden');
+  openMenuBtn.classList.remove('is-hidden');
+  closeMenuBtn.classList.add('is-hidden');
 }
-
 
 // ///////////////////Dark Theme/////////////////
 const body = document.querySelector('body');

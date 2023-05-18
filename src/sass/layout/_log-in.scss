@@ -6,9 +6,14 @@
   left: 0;
 
   // background-color: #4F2EE8;
-  background: radial-gradient(circle farthest-corner at -846px -919px, rgba(204, 236, 231, 0.5), #4F2EE8);
+  background: radial-gradient(
+    circle farthest-corner at -846px -919px,
+    rgba(204, 236, 231),
+    #4f2ee8
+  );
   // filter: blur(539.791px);
-  transition: opacity 250ms linear, visibility 250ms linear, transform 250ms linear;
+  transition: opacity 250ms linear, visibility 250ms linear,
+    transform 250ms linear;
 
   z-index: 99;
 }
@@ -19,7 +24,7 @@
   height: 516px;
   padding: 80px 40px 40px 40px;
   box-sizing: border-box;
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
   border: 2px solid #111111;
   border-radius: 18px;
   position: absolute;
@@ -27,7 +32,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  &>.modal-log__button-close-icon {
+  & > .modal-log__button-close-icon {
     // background-color: #F6F6F6;
     background-color: red;
   }
@@ -51,9 +56,9 @@
   right: 24px;
   position: absolute;
 
-  &>.modal-log__button-close-icon {
+  & > .modal-log__button-close-icon {
     // background-color: #F6F6F6;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
   }
 
   // &>.modal-log__button-close-icon {
@@ -111,7 +116,6 @@
 //   top: 50%;
 //   left: 50%;
 //   transform: translate(-50%, -50%);
-
 
 //   z-index: 999;
 
@@ -174,11 +178,9 @@
   padding-right: 0;
   padding-bottom: 0;
   // border-bottom: 1px solid #263238;
-  color: #4F2EE8;
+  color: #4f2ee8;
   text-decoration-line: underline;
 }
-
-
 
 // .modal-log form {
 // position: relative;
@@ -322,13 +324,13 @@
   visibility: hidden;
 }
 
-.modal-log .checkbox+label {
+.modal-log .checkbox + label {
   vertical-align: middle;
   display: inline-block;
   width: 50%;
 }
 
-.modal-log .checkbox+label:before {
+.modal-log .checkbox + label:before {
   content: '\A';
   /* color: #999999; */
   font-family: Verdana;
@@ -349,7 +351,7 @@
   margin: -2px 8px 0 0;
 }
 
-.modal-log .checkbox:checked+label:before {
+.modal-log .checkbox:checked + label:before {
   content: '✓';
 }
 
@@ -357,7 +359,6 @@
   // position: absolute;
   bottom: 0;
   width: 100%;
-
 }
 
 .modal-log .submit-wrap a {
@@ -466,8 +467,6 @@
   background: #111;
   transition: all 0.2s;
 }
-
-
 
 // .mobile-menu.is-open {
 //   display: block;
