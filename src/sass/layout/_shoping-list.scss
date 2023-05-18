@@ -1,6 +1,10 @@
+.shoping-list__sidebar {
+  display: none;
+}
+
 @media screen and (min-width: $desktop) {
   .shoping-list__sidebar {
-    display: none;
+    display: block;
   }
 }
 
@@ -48,6 +52,7 @@
   height: 177px;
   padding: 14px;
   margin-bottom: 20px;
+  background-color: $darktheme-border-black;
 }
 
 @media screen and (min-width: $tablet) {
@@ -265,4 +270,8 @@
     width: 48px;
     height: 15px;
   }
+}
+
+.button_trash {
+  background-color: $darktheme-border-black;
 }
