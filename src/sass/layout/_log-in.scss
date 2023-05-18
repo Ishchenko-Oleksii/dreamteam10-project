@@ -6,7 +6,7 @@
   left: 0;
 
   // background-color: #4F2EE8;
-  background: radial-gradient(circle farthest-corner at -846px -919px, rgba(204, 236, 231, 0.5), #4F2EE8);
+  background: radial-gradient(circle farthest-corner at -846px -919px, rgba(204, 236, 231), #4F2EE8);
   // filter: blur(539.791px);
   transition: opacity 250ms linear, visibility 250ms linear, transform 250ms linear;
 
@@ -27,10 +27,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  &>.modal-log__button-close-icon {
-    // background-color: #F6F6F6;
-    background-color: red;
-  }
+  // &>.modal-log__button-close-icon {
+  //   // background-color: #F6F6F6;
+  //   background-color: red;
+  // }
 
   // &.modal-log__button-close-icon {
   //   // background-color: #F6F6F6;
