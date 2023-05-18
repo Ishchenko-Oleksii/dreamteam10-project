@@ -30,7 +30,7 @@ header {
   // padding-left: 20px;
   // padding-right: 20px;
 
-  @media screen and (min-width: 375x) {
+  @media screen and (min-width: 375px) {
     width: 375px;
     //height: 72px;
     margin-left: auto;
@@ -171,7 +171,6 @@ header {
 
 .navigation {
   display: none;
-
 }
 @media screen and (min-width: 768px) {
   .navigation {
@@ -258,7 +257,7 @@ header {
     align-items: flex-start;
     gap: 9px;
   }
-  &-item {
+  &-link {
     color: $light-background;
   }
 }
@@ -283,10 +282,10 @@ header {
 
 @media screen and (min-width: 1440px) {
   .container-switcher-btn {
-  
     margin-left: 709px;
   }
 }
+
 .button_signup--header{
   display: none;
   @media screen and (min-width: 768px) {
@@ -300,6 +299,12 @@ header {
   display: flex;
   align-items: center;
   gap: 90px;
+}
+
+.btn-signup-burger{
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 .btn-logout-burger {
@@ -357,19 +362,19 @@ header {
 
 .burger-conteiner {
   position: fixed;
-  z-index: 3;
+  z-index: 15;
   top: 64px;
-  width: 100%;
+  width: 375px;
   height: 100%;
-  background-image: radial-gradient(
-      183.6% 183.01% at 59.76% -23.42%,
-      $button-background 18.03%,
-      $light-background 100%
-    ),
-    url(../images/Bakground_of_books.png);
+  background-image: url(../images/Bakground_of_books.png),
+  radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    $button-background 18.03%,
+    $light-background 100%
+  );
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
+  background-size: contain;
 }
 
 .is-hidden {

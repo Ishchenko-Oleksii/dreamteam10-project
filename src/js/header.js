@@ -1,5 +1,6 @@
 const openMenuBtn = document.querySelector('.open-menu-icon');
 const closeMenuBtn = document.querySelector('.close-menu-icon');
+const navigation = document.querySelector('.js-navigation');
 const burgerMenu = document.querySelector('.burger-menu');
 
 const customerLoggedIn = `<div class="burger-conteiner">
@@ -12,9 +13,9 @@ const customerLoggedIn = `<div class="burger-conteiner">
 
   <nav class="navigation-burger">
     <ul class="navigation-burger-list">
-      <li class="navigation-item navigation-burger-item"><a class="navigation-link" href="./index.html">Home</a></li>
-      <li class="navigation-item navigation-burger-item">
-        <a class="navigation-link" href="/src/shoping-list.html">Shopping List
+      <li class="navigation-item"><a class="navigation-link navigation-burger-link" href="./index.html">Home</a></li>
+      <li class="navigation-item">
+        <a class="navigation-link navigation-burger-link" href="/src/shoping-list.html">Shopping List
           <svg width="20" height="20">
             <use href="./images/icons.svg#icon-lock"></use>
           </svg>
@@ -23,7 +24,7 @@ const customerLoggedIn = `<div class="burger-conteiner">
     </ul>
   </nav>
 
-  <button class="button_logout btn-logout-burger">Log out
+  <button class="button_logout btn-logout-burger js-signout" type="button" value=""> Log out
     <svg width="20" height="20">
       <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
     </svg>
@@ -31,12 +32,29 @@ const customerLoggedIn = `<div class="burger-conteiner">
 </div>`;
 
 const customerNouLoggedIn = `<div class="burger-conteiner">
-  <button class="button_signup">Sign up
-    <svg width="20" height="20">
+  <button class="button_signup btn-signup-burger js-signup-btn" type="button" data-modal-open>Sign up
+    <svg class="button_signup-icon" width="20" height="20">
       <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
     </svg>
   </button>
 </div>`;
+
+// !localStorage.getItem('IS_CUSTOMER_LOGGED_IN')
+const IS_CUSTOMER_LOGGED_IN = false;
+
+if (IS_CUSTOMER_LOGGED_IN) {
+  burgerMenu.innerHTML = customerLoggedIn;
+  navigation.classList.remove('is-hidden');
+
+  // const signoutMobile = document.querySelector('.js-signout-mobile');
+  // signoutMobile.addEventListener('click', onSignOut);
+} else {
+  burgerMenu.innerHTML = customerNouLoggedIn;
+  // const openModalMobile = document.querySelector("[data-modal-open]");
+  // openModalMobile.addEventListener('click', () => {
+  //   const modal = document.querySelector("[data-modal]"); modal.classList.toggle("hidden")
+  // })
+}
 
 openMenuBtn.addEventListener('click', openMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
@@ -45,12 +63,6 @@ function openMenu() {
   burgerMenu.classList.remove('is-hidden');
   openMenuBtn.classList.add('is-hidden');
   closeMenuBtn.classList.remove('is-hidden');
-
-  // if (localStorage.getItem(IS_CUSTOMER_LOGGED_IN)) {
-  burgerMenu.innerHTML = customerLoggedIn;
-  //} else{
-  //     burgerMenu.innerHTML = customerNouLoggedIn;
-  // }
 }
 
 function closeMenu() {
