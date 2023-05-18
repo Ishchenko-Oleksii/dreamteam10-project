@@ -34,7 +34,6 @@ import {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
-//console.log(db);
 
 const COLLECTION_CUSTOMERS = 'customers';
 const CUSTOMER_NAME = 'customer_name';
