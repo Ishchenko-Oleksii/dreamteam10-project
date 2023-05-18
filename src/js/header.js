@@ -14,7 +14,7 @@ const customerLoggedIn = `<div class="burger-conteiner">
     <ul class="navigation-burger-list">
       <li class="navigation-item navigation-burger-item"><a class="navigation-link" href="./index.html">Home</a></li>
       <li class="navigation-item navigation-burger-item">
-        <a class="navigation-link" href="./partials/shoping-list-section.html">Shopping List
+        <a class="navigation-link" href="/src/shoping-list.html">Shopping List
           <svg width="20" height="20">
             <use href="./images/icons.svg#icon-lock"></use>
           </svg>

@@ -97,6 +97,9 @@
         height: 22px;
       }
     }
+    &--up {
+  transform: rotate(180deg);
+}
   }
   &__list {
     @media screen and (min-width: $tablet) {
@@ -140,11 +143,6 @@
 
   &__img {
     filter: brightness(0) invert(1);
-  }
-}
-
-.support--tablet {
-  @media screen and (min-width: $tablet) {
-    height: auto;
+    max-height: 32px;
   }
 }
