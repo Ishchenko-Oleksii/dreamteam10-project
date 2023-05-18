@@ -58,27 +58,28 @@
   }
 
   .bookShell-category{
-    @media screen and (min-width: $mobile) {
+    @media screen and (min-width: $tablet) {
       display: flex;
       flex-wrap: wrap;
       gap: 25px;
+      max-width: 996px;
       }
-      @media screen and (min-width: $tablet) {
-        
-        max-width: 996px;
-        
-            }
   }
 
   .book{
-    
+    text-align: start;
     position: relative;
     margin-top: 40px;
+    max-width: 335px; 
 
     @media screen and (min-width: $tablet) {
       margin-bottom: 86px;
-        max-width: 996px;
+        max-width: 704px; 
         margin-bottom: 0px;
+            }
+
+    @media screen and (min-width: $desktop) {
+        max-width: 996px; 
             }
     &__button {
       font-family: $main-font;
@@ -113,7 +114,8 @@
    
   }
   &__item{
-    @media screen and (min-width: $mobile) {
+    text-align: start;
+    @media screen and (min-width: $tablet) {
       width: 218px;
       height: auto;
       }
@@ -145,13 +147,13 @@
       border-radius: 8px;
       text-align: start;
 
-      @media screen and (min-width: $mobile) {
+      @media screen and (min-width: $tablet) {
         max-width: 100%;
         width: 218px;
         height: 316px;
       }
 
-      @media screen and (min-width: $tablet) {
+      @media screen and (min-width: $desktop) {
         max-width: 100%;
         width: 180px;
         height: 256px;
@@ -237,14 +239,26 @@
       }
 
       .bookShell-category .book {
-        flex-basis: calc(100% / 3 - 20px);
+        flex-basis: calc(100% - 20px);
         box-sizing: border-box;
-
-        @media  (min-width:780px) {
+      }
+      
+      @media screen and (min-width: $tablet) {
+        .bookShell-category .book {
+          flex-basis: calc(100% / 3 - 20px);
+        }
+      }
+      
+      @media screen and (min-width: $desktop) {
+        .bookShell-category .book {
           flex-basis: calc(100% / 5 - 20px);
-          }
-          
-      } 
+        }
+      }
+      
+      
+     
+      
+      
 
       .card.book:first-child {
        margin-top: 0;
