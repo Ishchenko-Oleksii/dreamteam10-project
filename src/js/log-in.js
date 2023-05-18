@@ -37,10 +37,11 @@ const db = getFirestore(app);
 //console.log(db);
 
 const COLLECTION_CUSTOMERS = 'customers';
-
+const CUSTOMER_NAME = 'customer_name';
 const LOCALSTOR_KEY = 'info-shopping-list'; //key of localstorage
 
-var IS_CUSTOMER_LOGGED_IN = false;
+
+let IS_CUSTOMER_LOGGED_IN = false;
 let CUSTOMER_SESSION_ID = '';
 
 onAuthStateChanged(auth, (user) => {
@@ -166,6 +167,9 @@ function onSignIn(event) {
                 console.log("Document data (Shoping list):", currentUserDocument.data().shopping_list);
                 // localStorage.setItem(LOCALSTOR_KEY, JSON.stringify(currentUserDocument.data().shopping_list));
                 localStorage.setItem(LOCALSTOR_KEY, currentUserDocument.data().shopping_list);
+
+                localStorage.setItem(CUSTOMER_NAME, currentUserDocument.data().customer_name);
+
             }
 
             // Redirect to home page
@@ -182,9 +186,12 @@ function onSignIn(event) {
 
 
 const signout = document.querySelector('.js-signout');
+// const signoutMobile = document.querySelector('.js-signout-mobile');
+// console.log(signoutMobile);
+
 // console.log(logout);
 signout.addEventListener('click', onSignOut);
-
+// signoutMobile.addEventListener('click', onSignOut);
 /**
  *  Sign Out function
  */
@@ -218,6 +225,7 @@ function onSignOut() {
             });
         }
         // debugger;
+        localStorage.removeItem(CUSTOMER_NAME);
         localStorage.removeItem(LOCALSTOR_KEY);
         localStorage.setItem('IS_CUSTOMER_LOGGED_IN', false);
 
@@ -230,3 +238,5 @@ function onSignOut() {
     });
 
 }
+
+export { onSignUp, onSignOut }
