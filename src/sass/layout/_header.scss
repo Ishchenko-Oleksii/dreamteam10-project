@@ -453,7 +453,7 @@ body.dark .shoping-list__title {
 }
 
 body.dark .shoping-list__empty-text {
-  color: #ffffff 60%;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 body.dark .button_trash {
@@ -462,4 +462,8 @@ body.dark .button_trash {
 
 body.dark .shoping-list__card {
   background-color: #111111;
+}
+
+body.dark .shoping-list__details {
+  color: #ffffff;
 }
