@@ -139,14 +139,13 @@ line-height: 18px;
   background-color: transparent;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .sidebar {
     display: block;
     position: relative;
     width: 100%;
     height: auto;
     margin-bottom: 20px;
-    display: flex;
   }
 }
 
@@ -158,4 +157,10 @@ line-height: 18px;
     height: auto;
     margin-bottom: 20px;
   }
+}
+
+@media screen and (min-width: $tablet) and (max-width: ($desktop - 1)) {
+    .sidebar {
+      display: flex;
+    };
 }
