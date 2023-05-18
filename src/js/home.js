@@ -1,8 +1,7 @@
 import axios from 'axios';
 const exporting = document.querySelector('export-all')
 export {exporting}
-setHome()
-function setHome(){
+
 async function fetchBooks() {
   const url = `https://books-backend.p.goit.global/books/top-books`;
   try {
@@ -242,7 +241,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
   updateBooksPerCategory();
 });
- 
 
-}
-export {setHome}
+export{ fetchCategoryBooks, clearBookShell, updateBooksPerCategory, createBookElement };
+
+
+
+
