@@ -120,8 +120,8 @@ function onSignUp(event) {
         session_id: user.uid,
       });
       // Redirect to home page
-      // window.open('/')
-      location.reload();
+      window.open('/');
+      // location.reload();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -174,8 +174,8 @@ function onSignIn(event) {
       }
 
       // Redirect to home page
-      // window.open('/');
-      location.reload();
+      window.open('/');
+      // location.reload();
     })
     .catch(error => {
       const errorCode = error.code;
@@ -231,8 +231,8 @@ function onSignOut() {
       localStorage.setItem('IS_CUSTOMER_LOGGED_IN', false);
 
       // Redirect to home page
-      // window.open('/');
-      location.reload();
+      window.open('/');
+      // location.reload();
     })
     .catch(error => {
       // An error happened.
