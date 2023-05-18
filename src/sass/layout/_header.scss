@@ -200,11 +200,11 @@ header {
 //   }
 // }
 
-// .navigation-link-thumb{
-//   display: flex;
-//   gap: 4px;
-//   align-items: center;
-// }
+.navigation-link-thumb {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 .navigation-link {
   font-family: $main-font;
   font-style: normal;
@@ -481,6 +481,15 @@ body.dark .navigation-item:focus {
   color: #111111;
 }
 
+body.dark .navigation-link {
+  color: #ffffff;
+}
+
+body.dark .navigation-link:hover,
+body.dark .navigation-link:focus {
+  color: #111111;
+}
+
 body.dark .navigation-link-icon {
   fill: currentColor;
 }
@@ -528,4 +537,12 @@ body.dark .modal-log input.submit:hover  {
 
 body.dark .modal-log input.submit:hover  {
   background-color: #202024;
+}
+
+body.dark .shoping-list__title {
+  color: #ffffff;
+}
+
+body.dark .shoping-list__empty-text {
+color: #ffffff60;
 }
