@@ -1,3 +1,9 @@
+@media screen and (min-width: $desktop) {
+  .sidebar {
+    display: block;
+  }
+}
+
 .shoping-list {
   padding-left: 20px;
   padding-right: 20px;
@@ -37,11 +43,11 @@
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
   height: 177px;
+  padding: 14px;
 }
 
 @media screen and (min-width: $mobile) {
   .shoping-list__card {
-    padding: 14px;
     margin-bottom: 20px;
   }
 }
@@ -54,11 +60,18 @@
 }
 
 .shoping-list__img {
-  width: auto;
-  height: 100%;
+  width: 100px;
+  height: 142px;
   object-fit: cover;
   margin-right: 14px;
   border-radius: 8px;
+}
+
+@media screen and (min-width: $tablet) {
+  .shoping-list__img {
+    width: 116px;
+    height: 165px;
+  }
 }
 
 .shoping-list__name {

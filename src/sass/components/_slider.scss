@@ -1,17 +1,17 @@
 .swiper {
-  height: 204px;
+  height: 188px;
+  transition: height 0.3s ease-out;
   @media screen and (min-width: $tablet) {
-    height: 296px;
-    
+    height: 292px;
   }
-}
-
-.swiper__scrollbar {
+  @media screen and (min-width: $desktop) {
+    height: 300px;
+  }
+  &__scrollbar {
   overflow-y: auto;
   &::-webkit-scrollbar {
   width: 6px; /* Ширина скролла */
 }
-
 &::-webkit-scrollbar-thumb {
   background-color: #ffffff33;
   border-radius: 12px;
@@ -21,14 +21,7 @@
   background-color: transparent; /* Цвет фона скролла */
 }
 }
-.swiper--tablet {
-  @media screen and (min-width: $tablet) {
-    height: 306px;
-    height: auto;
-    overflow: visible;
-  }
+&--tablet {
+    height: 447px;
 }
-
-.up {
-  transform: rotate(180deg);
 }
