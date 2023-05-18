@@ -411,7 +411,7 @@ body.dark .selected-category {
 }
 
 body.dark .modal-log {
-  background-color: #111;
+  background-color: #202024;
   border: 2px solid #f6f6f6;
 }
 
@@ -434,7 +434,7 @@ body.dark input.submit {
 }
 
 body.dark .modal-log {
-  background-color: #111;
+  background-color: #202024;
   border: 2px solid #f6f6f6;
 }
 
@@ -449,7 +449,7 @@ body.dark input.inpt {
 
 body.dark .modal-log {
   color: #202024;
-  background-color: #f6f6f6;
+  // background-color: #f6f6f6;
 }
 body.dark input.submit {
   color: #202024;
@@ -510,6 +510,7 @@ body.dark .modal-log input.inpt::placeholder {
 
 body.dark .modal-log__button-close {
   fill: #f6f6f6;
+  background-color: #202024;
 }
 body.dark .modal-log__button-close-icon  {
   fill: #f6f6f6;
