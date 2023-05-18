@@ -79,7 +79,6 @@ function getElementsByCategory() {
       imgElement.classList.add('insertedByCategoryBooks');
       const titleElement = document.createElement('p');
       titleElement.classList.add('book-title');
-
       if (bookTitle.length > 15) {
         titleElement.textContent = bookTitle.substring(0, 15) + '...';
       } else {
@@ -94,7 +93,6 @@ function getElementsByCategory() {
       } else {
         authorElement.textContent = bookAuthor;
       }
-
       bookContainer.appendChild(imgElement);
       bookContainer.appendChild(titleElement);
       bookContainer.appendChild(authorElement);
