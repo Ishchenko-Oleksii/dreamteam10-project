@@ -78,9 +78,6 @@ function createBookCard(category) {
     books.slice(0, 5).forEach(book => {
       const bookItem = document.createElement('li');
       bookItem.className = 'book__item';
-      bookItem.addEventListener('click', () => {
-        console.log(`Book ${book.title} clicked`);
-      });
 
       const bookImageContainer = document.createElement('div');
       bookImageContainer.classList.add('book-image-container');
@@ -209,7 +206,6 @@ function createBookElement(book_image, title, author, _id) {
   const bookItem = document.createElement('div');
   bookItem.className = 'book';
   bookItem.addEventListener('click', () => {
-    console.log(`Book ${title} clicked, ID: ${_id}`);
   });
 
   const bookImageContainer = document.createElement('div');
