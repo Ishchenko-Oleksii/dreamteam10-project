@@ -3,58 +3,32 @@ const closeMenuBtn = document.querySelector('.close-menu-icon');
 
 const navigation = document.querySelector('.js-navigation');
 
+
+const userBtnContainer = document.querySelector('.header-user-container');
 const userBtn = document.querySelector('.js-btn-user');
+const signoutHeder = document.querySelector('.js-signout-heder');
 const signupBtn = document.querySelector('.js-signup-btn');
 
 const burgerMenu = document.querySelector('.burger-menu');
 const burgerUser = document.querySelector('.js-burger-user');
 const burgerSignup = document.querySelector('.js-burger-signup');
 
-// const customerLoggedIn = `<div class="burger-conteiner"
-//   <div class="user-burger">
-//     <div class="avatar">
-//       <img class="avatar_img" src="" alt="">
-//     </div>
-//     <p class="user-name">Stephen</p>
-//   </div>
 
-//   <nav class="navigation-burger">
-//     <ul class="navigation-burger-list">
-//       <li class="navigation-item"><a class="navigation-link navigation-burger-link" href="./index.html">Home</a></li>
-//       <li class="navigation-item">
-//         <a class="navigation-link navigation-burger-link" href="./shoping-list.html">Shopping List
-//           <svg width="20" height="20">
-//             <use href="./src/images/icons.svg#icon-lock"></use>
-//           </svg>
-//         </a>
-//       </li>
-//     </ul>
-//   </nav>
-
-//   // <button class="button_logout btn-logout-burger js-signout" type="button" value=""> Log out
-//   //   <svg width="20" height="20">
-//   //     <use href="./src/images/icons.svg#icon-arrow-narrow-right"></use>
-//   //   </svg>
-//   // </button>
-// </div>`;
-
-// const customerNouLoggedIn = `<div class="burger-conteiner">
-//   <button class="button_signup btn-signup-burger js-signup-btn" type="button" data-modal-open>Sign up
-//     <svg class="button_signup-icon" width="20" height="20">
-//       <use href="./src/images/icons.svg#icon-arrow-narrow-right"></use>
-//     </svg>
-//   </button>
-// </div>`;
-
+const custumerName = document.querySelector('.user-name');
 const IS_CUSTOMER_LOGGED_IN = localStorage.getItem('IS_CUSTOMER_LOGGED_IN');
 
 function isCustomerLogIn() {
   if (JSON.parse(IS_CUSTOMER_LOGGED_IN)) {
+
+    let name = localStorage.getItem('customer_name');
+    userBtn.textContent = name;
+    custumerName.textContent = name;
     burgerUser.classList.remove('is-hidden');
     burgerSignup.classList.add('is-hidden');
 
     navigation.classList.remove('is-hidden');
-    userBtn.classList.remove('is-hidden');
+
+    userBtnContainer.classList.remove('is-hidden');
     signupBtn.classList.add('is-hidden');
 
   } else {
@@ -78,6 +52,7 @@ function closeMenu() {
   openMenuBtn.classList.remove('is-hidden');
   closeMenuBtn.classList.add('is-hidden');
 }
+userBtn.addEventListener('click', () => signoutHeder.classList.remove('is-hidden'));
 // ///////////////////Dark Theme/////////////////
 const body = document.querySelector('body');
 const toggle = document.querySelector('#theme-switch-toggle');
