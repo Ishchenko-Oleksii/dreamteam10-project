@@ -545,5 +545,18 @@ body.dark .shoping-list__title {
 }
 
 body.dark .shoping-list__empty-text {
-color: #ffffff60;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .shoping-list__card {
+  background-color: $darktheme-border-black;
+}
+body.dark .shoping-list__name {
+  color: #ffffff;
+}
+body.dark .shoping-list__details {
+  color: #ffffff;
+}
+body.dark .button_trash {
+  background-color: $darktheme-border-black;
 }
