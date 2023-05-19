@@ -41,11 +41,12 @@ const customerNouLoggedIn = `<div class="burger-conteiner">
   </button>
 </div>`;
 
-// !localStorage.getItem('IS_CUSTOMER_LOGGED_IN')
-// const IS_CUSTOMER_LOGGED_IN = true;
+const IS_CUSTOMER_LOGGED_IN = (localStorage.getItem('IS_CUSTOMER_LOGGED_IN'));
 
-if (localStorage.getItem('IS_CUSTOMER_LOGGED_IN')) {
+function isCustomerLogIn(){
+  if (JSON.parse(IS_CUSTOMER_LOGGED_IN)) {
   burgerMenu.innerHTML = customerLoggedIn;
+
   navigation.classList.remove('is-hidden');
   userBtn.classList.remove('is-hidden');
   signupBtn.classList.add('is-hidden');
@@ -57,8 +58,10 @@ if (localStorage.getItem('IS_CUSTOMER_LOGGED_IN')) {
   // openModalMobile.addEventListener('click', () => {
   //   const modal = document.querySelector("[data-modal]"); modal.classList.toggle("hidden")
   // })
-}
+}};
+isCustomerLogIn();
 
+export { isCustomerLogIn };
 openMenuBtn.addEventListener('click', openMenu);
 closeMenuBtn.addEventListener('click', closeMenu);
 
