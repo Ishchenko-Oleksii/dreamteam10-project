@@ -95,7 +95,7 @@ function onSignUp(event) {
             Notify.success('Your account was successfully registered!');
 
             // Redirect to home page
-            delay(1000).then(() => document.location.href = '/');
+            delay(1000).then(() => document.location.href = '/dreamteam10-project/');
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -135,7 +135,7 @@ function onSignIn(event) {
 
             // Redirect to home page
             Notify.success('Welcome!');
-            delay(1000).then(() => document.location.href = '/');
+            delay(1000).then(() => document.location.href = '/dreamteam10-project/');
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -183,7 +183,7 @@ function onSignOut() {
         Notify.warning('Have a nice day!');
 
         // Redirect to home page
-        delay(1000).then(() => document.location.href = '/');
+        delay(1000).then(() => document.location.href = '/dreamteam10-project/');
 
     }).catch((error) => {
         const errorMessage = error.message;
