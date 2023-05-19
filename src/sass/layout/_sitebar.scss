@@ -113,3 +113,10 @@
     margin-bottom: 20px;
   }
 }
+
+.selected-category {
+  color: #4f2ee8;
+}
+body.dark .selected-category {
+  color: #eac645;
+}

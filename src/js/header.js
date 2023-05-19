@@ -3,6 +3,7 @@ const closeMenuBtn = document.querySelector('.close-menu-icon');
 
 const navigation = document.querySelector('.js-navigation');
 
+
 const userBtnContainer = document.querySelector('.header-user-container');
 const userBtn = document.querySelector('.js-btn-user');
 const signoutHeder = document.querySelector('.js-signout-heder');
@@ -12,11 +13,13 @@ const burgerMenu = document.querySelector('.burger-menu');
 const burgerUser = document.querySelector('.js-burger-user');
 const burgerSignup = document.querySelector('.js-burger-signup');
 
+
 const custumerName = document.querySelector('.user-name');
 const IS_CUSTOMER_LOGGED_IN = localStorage.getItem('IS_CUSTOMER_LOGGED_IN');
 
 function isCustomerLogIn() {
   if (JSON.parse(IS_CUSTOMER_LOGGED_IN)) {
+
     let name = localStorage.getItem('customer_name');
     userBtn.textContent = name;
     custumerName.textContent = name;
@@ -24,6 +27,7 @@ function isCustomerLogIn() {
     burgerSignup.classList.add('is-hidden');
 
     navigation.classList.remove('is-hidden');
+
     userBtnContainer.classList.remove('is-hidden');
     signupBtn.classList.add('is-hidden');
 
