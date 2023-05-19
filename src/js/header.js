@@ -1,6 +1,8 @@
 const openMenuBtn = document.querySelector('.open-menu-icon');
 const closeMenuBtn = document.querySelector('.close-menu-icon');
 const navigation = document.querySelector('.js-navigation');
+const userBtn = document.querySelector('.js-btn-user');
+const signupBtn = document.querySelector('.js-signup-btn');
 const burgerMenu = document.querySelector('.burger-menu');
 
 const customerLoggedIn = `<div class="burger-conteiner">
@@ -40,12 +42,13 @@ const customerNouLoggedIn = `<div class="burger-conteiner">
 </div>`;
 
 // !localStorage.getItem('IS_CUSTOMER_LOGGED_IN')
-const IS_CUSTOMER_LOGGED_IN = true;
+// const IS_CUSTOMER_LOGGED_IN = true;
 
-if (IS_CUSTOMER_LOGGED_IN) {
+if (localStorage.getItem('IS_CUSTOMER_LOGGED_IN')) {
   burgerMenu.innerHTML = customerLoggedIn;
   navigation.classList.remove('is-hidden');
-
+  userBtn.classList.remove('is-hidden');
+  signupBtn.classList.add('is-hidden');
   // const signoutMobile = document.querySelector('.js-signout-mobile');
   // signoutMobile.addEventListener('click', onSignOut);
 } else {
