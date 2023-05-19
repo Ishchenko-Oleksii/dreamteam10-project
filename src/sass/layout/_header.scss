@@ -235,12 +235,12 @@ header {
 }
 
 .navigation-link-icon {
-  // margin-left: 4px;
-  color: currentColor;
+  fill: currentColor;
 }
 
 .navigation-burger {
   margin-top: 183px;
+  margin-left: 115px;
   &-list {
     display: flex;
     flex-direction: column;
