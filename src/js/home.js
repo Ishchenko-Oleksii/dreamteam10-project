@@ -40,7 +40,7 @@ function createBookCard(category) {
   const { list_name, books } = category;
   const card = document.createElement('div');
   card.className = 'book';
-  card.classList.add('card');
+  card.classList.add('card', 'fade-in');
 
   const body = document.createElement('div');
   body.className = 'book__body';
@@ -131,6 +131,15 @@ function updateBooksPerCategory() {
         books[i].style.display = 'none';
       }
     }
+    for (let i = 0; i < books.length; i++) {
+      if (i < booksPerCategory) {
+        books[i].style.display = 'block';
+        books[i].classList.add('fade-in');
+      } else {
+        books[i].style.display = 'none';
+        books[i].classList.remove('fade-in');
+      }
+    }
   });
 }
 
@@ -182,7 +191,9 @@ async function fetchCategoryBooks(category) {
 
 function createBookElement(book_image, title, author, _id) {
   const bookItem = document.createElement('div');
-  bookItem.className = 'book';
+  
+  bookItem.classList.add('fade-in', 'book');
+
   bookItem.addEventListener('click', () => {
   });
 
