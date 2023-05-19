@@ -236,7 +236,7 @@ header {
 
 .navigation-link-icon {
   // margin-left: 4px;
-  color: currentColor;
+  fill: currentColor;
 }
 
 .navigation-burger {
@@ -260,6 +260,14 @@ header {
   justify-content: center;
   flex-wrap: nowrap;
   gap: 14px;
+}
+
+.header-user-container{
+  position: relative;
+}
+.js-signout-heder{
+  position: absolute;
+  top: 58px;
 }
 
 @media screen and (min-width: 768px) {

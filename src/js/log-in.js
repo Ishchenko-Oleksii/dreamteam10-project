@@ -144,8 +144,8 @@ function onSignIn(event) {
 }
 
 
-const signout = document.querySelector('.js-signout');
-signout.addEventListener('click', onSignOut);
+const signout = document.querySelectorAll('.js-signout');
+signout.forEach(e => e.addEventListener("click", onSignOut));
 
 /**
  *  Sign Out function
