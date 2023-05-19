@@ -275,7 +275,7 @@ header {
   }
 }
 
-.button_header_user{
+.button_header_user {
   display: none;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -298,7 +298,7 @@ header {
   gap: 90px;
 }
 
-.btn-signup-burger{
+.btn-signup-burger {
   position: absolute;
   left: 20px;
   top: 20px;
@@ -326,7 +326,7 @@ header {
   color: $light-background;
 }
 
-.open-menu-icon, 
+.open-menu-icon,
 .close-menu-icon {
   margin-top: 16px;
   color: $darktheme-border-black;
@@ -363,11 +363,11 @@ header {
   width: 375px;
   height: 100%;
   background-image: url(../images/Bakground_of_books.png),
-  radial-gradient(
-    183.6% 183.01% at 59.76% -23.42%,
-    $button-background 18.03%,
-    $light-background 100%
-  );
+    radial-gradient(
+      183.6% 183.01% at 59.76% -23.42%,
+      $button-background 18.03%,
+      $light-background 100%
+    );
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
@@ -418,10 +418,6 @@ body.dark .sitebar {
 
 body.dark .aside-list-button {
   color: rgba(255, 255, 255, 0.6);
-}
-
-body.dark .selected-category {
-  color: #eac645;
 }
 
 body.dark .modal-log {

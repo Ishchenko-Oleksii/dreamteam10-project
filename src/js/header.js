@@ -19,7 +19,7 @@ const customerLoggedIn = `<div class="burger-conteiner">
       <li class="navigation-item">
         <a class="navigation-link navigation-burger-link" href="./shoping-list.html">Shopping List
           <svg width="20" height="20">
-            <use href="./images/icons.svg#icon-lock"></use>
+            <use href="./src/images/icons.svg#icon-lock"></use>
           </svg>
         </a>
       </li>
@@ -28,7 +28,7 @@ const customerLoggedIn = `<div class="burger-conteiner">
 
   <button class="button_logout btn-logout-burger js-signout" type="button" value=""> Log out
     <svg width="20" height="20">
-      <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
+      <use href="./src/images/icons.svg#icon-arrow-narrow-right"></use>
     </svg>
   </button>
 </div>`;
@@ -36,29 +36,30 @@ const customerLoggedIn = `<div class="burger-conteiner">
 const customerNouLoggedIn = `<div class="burger-conteiner">
   <button class="button_signup btn-signup-burger js-signup-btn" type="button" data-modal-open>Sign up
     <svg class="button_signup-icon" width="20" height="20">
-      <use href="./images/icons.svg#icon-arrow-narrow-right"></use>
+      <use href="./src/images/icons.svg#icon-arrow-narrow-right"></use>
     </svg>
   </button>
 </div>`;
 
-const IS_CUSTOMER_LOGGED_IN = (localStorage.getItem('IS_CUSTOMER_LOGGED_IN'));
+const IS_CUSTOMER_LOGGED_IN = localStorage.getItem('IS_CUSTOMER_LOGGED_IN');
 
-function isCustomerLogIn(){
+function isCustomerLogIn() {
   if (JSON.parse(IS_CUSTOMER_LOGGED_IN)) {
-  burgerMenu.innerHTML = customerLoggedIn;
+    burgerMenu.innerHTML = customerLoggedIn;
 
-  navigation.classList.remove('is-hidden');
-  userBtn.classList.remove('is-hidden');
-  signupBtn.classList.add('is-hidden');
-  // const signoutMobile = document.querySelector('.js-signout-mobile');
-  // signoutMobile.addEventListener('click', onSignOut);
-} else {
-  burgerMenu.innerHTML = customerNouLoggedIn;
-  // const openModalMobile = document.querySelector("[data-modal-open]");
-  // openModalMobile.addEventListener('click', () => {
-  //   const modal = document.querySelector("[data-modal]"); modal.classList.toggle("hidden")
-  // })
-}};
+    navigation.classList.remove('is-hidden');
+    userBtn.classList.remove('is-hidden');
+    signupBtn.classList.add('is-hidden');
+    // const signoutMobile = document.querySelector('.js-signout-mobile');
+    // signoutMobile.addEventListener('click', onSignOut);
+  } else {
+    burgerMenu.innerHTML = customerNouLoggedIn;
+    // const openModalMobile = document.querySelector("[data-modal-open]");
+    // openModalMobile.addEventListener('click', () => {
+    //   const modal = document.querySelector("[data-modal]"); modal.classList.toggle("hidden")
+    // })
+  }
+}
 isCustomerLogIn();
 
 export { isCustomerLogIn };
