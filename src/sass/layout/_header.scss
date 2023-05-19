@@ -200,11 +200,11 @@ header {
 //   }
 // }
 
-// .navigation-link-thumb{
-//   display: flex;
-//   gap: 4px;
-//   align-items: center;
-// }
+.navigation-link-thumb {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
 .navigation-link {
   font-family: $main-font;
   font-style: normal;
@@ -411,7 +411,7 @@ body.dark .selected-category {
 }
 
 body.dark .modal-log {
-  background-color: #111;
+  background-color: #202024;
   border: 2px solid #f6f6f6;
 }
 
@@ -434,7 +434,7 @@ body.dark input.submit {
 }
 
 body.dark .modal-log {
-  background-color: #111;
+  background-color: #202024;
   border: 2px solid #f6f6f6;
 }
 
@@ -449,7 +449,7 @@ body.dark input.inpt {
 
 body.dark .modal-log {
   color: #202024;
-  background-color: #f6f6f6;
+  // background-color: #f6f6f6;
 }
 body.dark input.submit {
   color: #202024;
@@ -481,6 +481,15 @@ body.dark .navigation-item:focus {
   color: #111111;
 }
 
+body.dark .navigation-link {
+  color: #ffffff;
+}
+
+body.dark .navigation-link:hover,
+body.dark .navigation-link:focus {
+  color: #111111;
+}
+
 body.dark .navigation-link-icon {
   fill: currentColor;
 }
@@ -488,4 +497,66 @@ body.dark .navigation-link-icon {
 body.dark .open-menu-icon {
   background-color: #202024;
   color: #ffffff;
+}
+
+body.dark .modal-log  {
+  background-color: #202024;
+  border: 2px solid #f6f6f6;
+}
+
+body.dark .modal-log input.inpt::placeholder {
+  color: #f6f6f6;
+}
+
+body.dark .modal-log__button-close {
+  fill: #f6f6f6;
+  background-color: #202024;
+}
+body.dark .modal-log__button-close-icon  {
+  fill: #f6f6f6;
+}
+
+body.dark .modal-log input.inpt  {
+  border: 2px solid #f6f6f6;
+}
+
+body.dark .modal-log__button {
+  fill: #f6f6f6;
+}
+
+body.dark .tab {
+  color: rgba(246, 246, 246, 0.5);
+}
+
+body.dark .modal-log input.submit  {
+  background-color: #f6f6f6;
+}
+
+body.dark .modal-log input.submit:hover  {
+  background-color: #202024;
+}
+
+body.dark .modal-log input.submit:hover  {
+  background-color: #202024;
+}
+
+body.dark .shoping-list__title {
+  color: #ffffff;
+}
+
+body.dark .shoping-list__empty-text {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark .shoping-list__card {
+  background-color: $darktheme-border-black;
+}
+body.dark .shoping-list__name {
+  color: #ffffff;
+}
+body.dark .shoping-list__details {
+  color: #ffffff;
+}
+body.dark .button_trash {
+  background-color: $darktheme-border-black;
 }

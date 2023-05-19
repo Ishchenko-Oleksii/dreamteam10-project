@@ -88,20 +88,19 @@ function onSignUp(event) {
             await setDoc(doc(db, COLLECTION_CUSTOMERS, email.value), {
                 customer_name: name.value,
                 customer_email: email.value,
-                shopping_list: '',
+                shopping_list: [],
                 customer_avatar: '',
                 session_id: user.uid
             });
             Notify.success('Your account was successfully registered!');
 
             // Redirect to home page
-            delay(1000).then(() => document.location.href = '/');
+            delay(1000).then(() => document.location.href = '/dreamteam10-project/');
         })
         .catch((error) => {
             const errorMessage = error.message;
             Notify.failure(errorMessage)
         });
-
 }
 
 
@@ -130,15 +129,13 @@ function onSignIn(event) {
             // Restoring Shopping Cart list from the DB if exists
             const currentUserDocument = await getDoc(currentUser);
             if (currentUserDocument.exists()) {
-
-
                 localStorage.setItem(CUSTOMER_NAME, currentUserDocument.data().customer_name);
                 localStorage.setItem(LOCALSTOR_KEY, currentUserDocument.data().shopping_list);
             }
 
             // Redirect to home page
             Notify.success('Welcome!');
-            delay(1000).then(() => document.location.href = '/');
+            delay(1000).then(() => document.location.href = '/dreamteam10-project/');
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -186,14 +183,13 @@ function onSignOut() {
         Notify.warning('Have a nice day!');
 
         // Redirect to home page
-        delay(1000).then(() => document.location.href = '/');
+        delay(1000).then(() => document.location.href = '/dreamteam10-project/');
 
     }).catch((error) => {
         const errorMessage = error.message;
         // An error happened.
         Notify.failure(errorMessage)
     });
-
 }
 
 function delay(time) {

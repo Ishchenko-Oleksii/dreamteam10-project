@@ -1,21 +1,18 @@
 .sidebar {
-  // position: relative;
-  // top: 0;
-  // left: 0;
-  //width: 404px;
   height: 100%;
-  padding: 40px 20px;
+  padding: 40px 20px 0 20px;
   box-sizing: border-box;
   z-index: 2;
-}
-
-.aside-list-button {
-  color: rgba(17, 17, 17, 0.6);
-  background-color: transparent;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+  @media screen and (min-width: $desktop) {
+    display: block;
+  }
 }
 
 .selected-category {
-  color: #4f2ee8;
+  color: $button-background;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 16px;
@@ -25,21 +22,14 @@
 .aside-list-button {
   color: rgba(17, 17, 17, 0.6);
   background-color: transparent;
-  display:block;
-  @media screen and (min-width: 768px) {
-    display:flex;
-    padding: 40px 32px;
-  }
-  @media screen and (min-width: 1440px) {
-    display:block;
-    padding-left: 24px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-  }
-}
+  display: block;
 
-.selected-category {
-  color: #4f2ee8;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    gap: 32px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 }
 
 .aside-list-button {
@@ -52,13 +42,11 @@
   line-height: 1.125;
   letter-spacing: -0.02em;
 
-  color: rgba(17, 17, 17, 0.6);
-
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $tablet) {
     font-size: 18px;
     line-height: 1.333px;
+    letter-spacing: -1px;
   }
- 
 }
 
 .aside-list-button:hover,
@@ -66,95 +54,33 @@
   color: #4f2ee8;
   transition: color 0.25s ease-in-out;
 }
-.export-all {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  column-gap: 25px;
-}
+
 .insertedByCategoryBooks {
   width: 180px;
-height: 256px;
-  border-radius: 8px;
-}
-.book-title {
-  cursor: default;
-  letter-spacing: -.04em;
-  text-transform: uppercase;
-  color: #111;
-  text-align: start;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  font-family: DM Sans, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.12;
-}
-.export-all {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-.insertedByCategoryBooks {
-  width: 180px;
-height: 256px;
+  height: 256px;
   border-radius: 8px;
 }
 
-.book-title {
-  cursor: default;
-  letter-spacing: -.04em;
-  text-transform: uppercase;
-  color: #111;
-  text-align: start;
-  padding-top: 14px;
-  padding-bottom: 4px;
-  font-family: DM Sans, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-line-height: 18px;
-  box-sizing: border-box;
-}
-.book-author {
-  cursor: default;
-  letter-spacing: -.04em;
-  text-align: start;
-  color: #b4afaf;
-  padding-bottom: 8px;
-  font-family: DM Sans, sans-serif;
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 400;
-  line-height: 1.16;
-}
-
-
-.selected-category {
-  color: #4f2ee8;
+.insertedByCategoryBooks {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
 }
 
 .aside-list {
   width: 356px;
-  height: 472px;
+  height: 237px;
   display: flex;
   flex-direction: column;
   row-gap: 24px;
   overflow: auto;
-  //margin-top: 40px;
 
   border-radius: 15px;
-  @media screen and (min-width: 768px) {
-    row-gap: 32px;
+  @media screen and (min-width: $tablet) {
+    height: 472px;
   }
-
 }
 
-/* Стилізація прокрутки */
 .aside-list::-webkit-scrollbar {
   width: 8px;
   height: 167px;
@@ -169,13 +95,12 @@ line-height: 18px;
   background-color: transparent;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $tablet) {
   .sidebar {
     display: block;
     position: relative;
     width: 100%;
     height: auto;
-    margin-bottom: 20px;
   }
 }
 
