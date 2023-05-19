@@ -74,10 +74,24 @@ function attachEventListeners() {
       }
     });
   });
+  document.addEventListener('categoryChange', function (event) {
+    const newCategory = event.detail;
+    changeSelectedCategory(newCategory);
+  });
+}
+
+function changeSelectedCategory(category) {
+  const buttons = document.querySelectorAll('.aside-list-button');
+  buttons.forEach(button => {
+    button.classList.remove('selected-category');
+    if (button.textContent === category) {
+      button.classList.add('selected-category');
+    }
+  });
 }
 
 
 
-export { selectedCategory, attachEventListeners };
+export { selectedCategory, attachEventListeners, changeSelectedCategory };
 
 

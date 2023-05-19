@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { changeSelectedCategory } from './sitebar.js';
 const exporting = document.querySelector('export-all')
 export {exporting}
 
@@ -106,6 +107,8 @@ function createBookCard(category) {
     clearBookShell();
     try {
       await fetchCategoryBooks(category);
+      document.dispatchEvent(new CustomEvent('categoryChange', { detail: category }));
+      changeSelectedCategory(category);
     } catch (error) {
       console.error(error);
     }
