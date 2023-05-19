@@ -17,10 +17,10 @@ const refs={
 const STORAGE_KEY = 'info-shopping-list';
 
 let currentBookInfo={};
-
-const savedData=localStorage.getItem(STORAGE_KEY);
-
-let arrShoppingList=JSON.parse(savedData) || [];
+let arrShoppingList=[];
+if (localStorage.getItem(STORAGE_KEY)){
+    arrShoppingList=JSON.parse(localStorage.getItem(STORAGE_KEY))
+}
 
 refs.div.addEventListener('click',onItemGalleryBooksClick);
 

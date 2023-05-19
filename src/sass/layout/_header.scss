@@ -24,8 +24,8 @@ header {
   align-items: center;
   // border: 1.5px solid #111111;
   // border-radius: 0px 0px 8px 8px;
-  // padding-left: 20px;
-  // padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 
   @media screen and (min-width: 375x) {
     width: 375px;
@@ -248,7 +248,7 @@ header {
     align-items: flex-start;
     gap: 9px;
   }
-  &-item {
+  &-link {
     color: $light-background;
   }
 }
@@ -274,6 +274,15 @@ header {
     margin-left: 709px;
   }
 }
+
+.button_header_user{
+  display: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    margin-top: 12px;
+  }
+}
+
 .button_signup--header {
   display: none;
   @media screen and (min-width: 768px) {
@@ -287,6 +296,12 @@ header {
   display: flex;
   align-items: center;
   gap: 90px;
+}
+
+.btn-signup-burger{
+  position: absolute;
+  left: 20px;
+  top: 20px;
 }
 
 .btn-logout-burger {
@@ -311,11 +326,8 @@ header {
   color: $light-background;
 }
 
-.button_user {
-  display: none;
-}
-
-.open-menu-icon {
+.open-menu-icon, 
+.close-menu-icon {
   margin-top: 16px;
   color: $darktheme-border-black;
   background-color: #fff;
@@ -325,7 +337,9 @@ header {
   fill: currentColor;
 }
 .open-menu-icon:hover,
-.open-menu-icon:focus {
+.open-menu-icon:focus,
+.close-menu-icon:hover,
+.close-menu-icon:focus {
   color: $hover-yellow;
 }
 
@@ -344,19 +358,19 @@ header {
 
 .burger-conteiner {
   position: fixed;
-  z-index: 3;
-  top: 64px;
-  width: 100%;
+  z-index: 15;
+  top: 72px;
+  width: 375px;
   height: 100%;
-  background-image: radial-gradient(
-      183.6% 183.01% at 59.76% -23.42%,
-      $button-background 18.03%,
-      $light-background 100%
-    ),
-    url(../images/Bakground_of_books.png);
+  background-image: url(../images/Bakground_of_books.png),
+  radial-gradient(
+    183.6% 183.01% at 59.76% -23.42%,
+    $button-background 18.03%,
+    $light-background 100%
+  );
   background-repeat: no-repeat;
   background-position: bottom;
-  background-size: cover;
+  background-size: contain;
 }
 
 .is-hidden {
@@ -437,7 +451,6 @@ body.dark .modal-log {
   background-color: #202024;
   border: 2px solid #f6f6f6;
 }
-
 body.dark .modal-log {
   border: 1px solid #f6f6f6;
   color: #f6f6f6;
@@ -494,7 +507,8 @@ body.dark .navigation-link-icon {
   fill: currentColor;
 }
 
-body.dark .open-menu-icon {
+body.dark .open-menu-icon,
+body.dark .close-menu-icon {
   background-color: #202024;
   color: #ffffff;
 }
