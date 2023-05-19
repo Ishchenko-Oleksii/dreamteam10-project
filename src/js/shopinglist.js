@@ -8,26 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
   sidebar.classList.add('shoping-list__sidebar');
 });
 
-const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
-// import imageAmazon from '../images/amazone1.svg';
-// import imageBookShop from '../images/bookshop.svg';
-// import imageiBooks from '../images/ibooks.svg';
-import deleteButton from '../images/dump.svg';
-
+import Pagination from 'tui-pagination';
+import imageAmazon from '../images/amazone4.svg';
 import imageBookShop from '../images/bookshop.svg';
 import imageiBooks from '../images/ibooks.svg';
-import imageAmazon from '../images/amazone4.svg';
+import deleteButton from '../images/dump.svg';
+import EmptyPicture from '../images/emptyshopinglist.jpg';
 
-import EmptyPicture from '../images/emptyshopinglist.svg';
-
-import Pagination from 'tui-pagination';
+let books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
 
 function deleteBook(bookId) {
   const index = books.findIndex(book => book.bookId === bookId);
   if (index !== -1) {
     books.splice(index, 1);
     localStorage.setItem('info-shopping-list', JSON.stringify(books));
-    renderBooks();
+    renderBooks(1);
   }
 }
 
@@ -36,7 +31,7 @@ function createMarkup(books) {
     return `
       <div class="shoping-list__empty-page">
         <p class="shoping-list__empty-text">This page is empty, add some books and proceed to order.</p>
-        <img class="shoping-list__empty-img" src=${EmptyPicture} alt="Empty page">
+        <img class="shoping-list__empty-img" src="${EmptyPicture}" alt="Пустая страница">
       </div>
     `;
   }
@@ -72,18 +67,18 @@ function createMarkup(books) {
             }
 
             linksHtml.push(`
-      <li>
-        <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
-          <img src="${iconHref}" class="${iconClass}"/>
-        </a>
-      </li>
-    `);
+              <li>
+                <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
+                  <img src="${iconHref}" class="${iconClass}"/>
+                </a>
+              </li>
+            `);
           }
         });
 
         return `
           <div class="shoping-list__card">
-            <img class="shoping-list__img" src="${bookImage}" alt="Book Cover" />
+            <img class="shoping-list__img" src="${bookImage}" alt="Обложка книги" />
             <div class="shoping-list__text-container">
               <div class="shoping-list__button-container">
                 <div class="shoping-list__second-text-container">
@@ -91,7 +86,7 @@ function createMarkup(books) {
                   <p class="shoping-list__bind">${bookCategory}</p>
                 </div>
                 <button class="button_trash" data-book-id="${bookId}">
-                    <img class="button_trash-svg" src="${deleteButton}"/>
+                  <img class="button_trash-svg" src="${deleteButton}"/>
                 </button>
               </div>
               <p class="shoping-list__details">${bookDescription}</p>
@@ -136,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const paginationContainer = document.getElementById(
     'tui-pagination-container'
   );
-  console.log(paginationContainer);
   const pagination = new Pagination('tui-pagination-container', {
     totalItems,
     itemsPerPage,
@@ -146,163 +140,3 @@ document.addEventListener('DOMContentLoaded', () => {
     renderBooks(event.page);
   });
 });
-
-// function renderBooks() {
-//   const booksContainer = document.getElementsByClassName('booksContainer')[0];
-//   while (booksContainer.firstChild) {
-//     booksContainer.firstChild.remove();
-//   }
-
-//   booksContainer.innerHTML = createMarkup(books);
-
-//   const deleteButtons = document.getElementsByClassName('button_trash');
-//   Array.from(deleteButtons).forEach(button => {
-//     const bookId = button.dataset.bookId;
-//     button.addEventListener('click', () => deleteBook(bookId));
-//   });
-// }
-
-// renderBooks();
-
-// // Импортируем модуль
-// import Pagination from 'tui-pagination';
-
-// // Импортируем изображения
-// import imageAmazon from '../images/amazone1.svg';
-// import imageBookShop from '../images/bookshop.svg';
-// import imageiBooks from '../images/ibooks.svg';
-// import deleteButton from '../images/dump.svg';
-// import EmptyPicture from '../images/emptyshopinglist.jpg';
-
-// // Получаем данные книг из localStorage или создаем пустой массив
-// const books = JSON.parse(localStorage.getItem('info-shopping-list')) || [];
-
-// // Функция удаления книги
-// function deleteBook(bookId) {
-//   const index = books.findIndex(book => book.bookId === bookId);
-//   if (index !== -1) {
-//     books.splice(index, 1);
-//     localStorage.setItem('info-shopping-list', JSON.stringify(books));
-//     renderBooks(1);
-//   }
-// }
-
-// // Функция создания разметки для книг
-// function createMarkup(books) {
-//   if (books.length === 0) {
-//     return `
-//       <div class="shoping-list__empty-page">
-//         <p class="shoping-list__empty-text">Эта страница пуста, добавьте книги и перейдите к оформлению заказа.</p>
-//         <img class="shoping-list__empty-img" src=${EmptyPicture} alt="Пустая страница">
-//       </div>
-//     `;
-//   }
-
-//   return books
-//     .map(
-//       ({
-//         bookId,
-//         bookTitle,
-//         bookImage,
-//         bookAuthor,
-//         bookDescription,
-//         bookCategory,
-//         bookAmazon,
-//         bookShop,
-//         bookOpenBook,
-//       }) => {
-//         const linksHtml = [];
-
-//         [bookAmazon, bookShop, bookOpenBook].forEach(buyLink => {
-//           if (buyLink) {
-//             let iconWidth, iconHeight, iconHref;
-
-//             if (buyLink === bookAmazon) {
-//               iconWidth = '32px';
-//               iconHeight = '11px';
-//               iconHref = imageAmazon;
-//             } else if (buyLink === bookOpenBook) {
-//               iconWidth = '16px';
-//               iconHeight = '16px';
-//               iconHref = imageiBooks;
-//             } else if (buyLink === bookShop) {
-//               iconWidth = '16px';
-//               iconHeight = '16px';
-//               iconHref = imageBookShop;
-//             }
-
-//             linksHtml.push(`
-//               <li>
-//                 <a class="shoping-list__svg-link" target="_blank" href="${buyLink}">
-//                   <img src="${iconHref}" width="${iconWidth}" height="${iconHeight}"/>
-//                 </a>
-//               </li>
-//             `);
-//           }
-//         });
-
-//         return `
-//           <div class="shoping-list__card">
-//             <img class="shoping-list__img" src="${bookImage}" alt="Обложка книги" />
-//             <div class="shoping-list__text-container">
-//               <div class="shoping-list__button-container">
-//                 <div class="shoping-list__second-text-container">
-//                   <h3 class="shoping-list__name">${bookTitle}</h3>
-//                   <p class="shoping-list__bind">${bookCategory}</p>
-//                 </div>
-//                 <button class="button_trash" data-book-id="${bookId}">
-//                   <img class="button_trash-svg" src="${deleteButton}"/>
-//                 </button>
-//               </div>
-//               <p class="shoping-list__details">${bookDescription}</p>
-//               <div class="shoping-list__svg-container">
-//                 <p class="shoping-list__author">${bookAuthor}</p>
-//                 <ul class="shoping-list__links">${linksHtml.join('')}</ul>
-//               </div>
-//             </div>
-//           </div>
-//         `;
-//       }
-//     )
-//     .join('');
-// }
-
-// function renderBooks(page) {
-//   const booksContainer = document.querySelector('.booksContainer');
-//   while (booksContainer.firstChild) {
-//     booksContainer.firstChild.remove();
-//   }
-
-//   const itemsPerPage = 2;
-//   const start = (page - 1) * itemsPerPage;
-//   const end = start + itemsPerPage;
-//   const booksToShow = books.slice(start, end);
-
-//   booksContainer.innerHTML = createMarkup(booksToShow);
-
-//   const deleteButtons = document.getElementsByClassName('button_trash');
-//   Array.from(deleteButtons).forEach(button => {
-//     const bookId = button.dataset.bookId;
-//     button.addEventListener('click', () => deleteBook(bookId));
-//   });
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   renderBooks(1);
-
-//   const totalItems = books.length;
-//   const itemsPerPage = 2;
-
-//   const paginationContainer = document.getElementById(
-//     'tui-pagination-container'
-//   );
-//   console.log(paginationContainer);
-//   const pagination = new Pagination('tui-pagination-container', {
-//     totalItems,
-//     itemsPerPage,
-//     centerAlign: true,
-//   });
-//   pagination.on('afterMove', event => {
-//     renderBooks(event.page);
-//   });
-// });
