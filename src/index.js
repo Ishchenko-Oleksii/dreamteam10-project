@@ -1,3 +1,4 @@
+import './js/loader';
 import './js/log-in';
 import './js/header';
 import './js/sitebar';

@@ -75,7 +75,7 @@ const fondsNames = [
   },
 ];
 
-console.log(fondsNames);
+// console.log(fondsNames);
 
 const fondsList = document.querySelector(`.support__list`);
 
